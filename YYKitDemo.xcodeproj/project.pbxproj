@@ -63,9 +63,6 @@
 		B4463A171D3624D8000081DC /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B446393E1D3624D7000081DC /* UIImageView+HighlightedWebCache.m */; };
 		B4463A181D3624D8000081DC /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B44639401D3624D7000081DC /* UIImageView+WebCache.m */; };
 		B4463A191D3624D8000081DC /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B44639421D3624D7000081DC /* UIView+WebCacheOperation.m */; };
-		B4463A1A1D3624D8000081DC /* 现金加积分.png in Resources */ = {isa = PBXBuildFile; fileRef = B44639431D3624D7000081DC /* 现金加积分.png */; };
-		B4463A1B1D3624D8000081DC /* 现金支付.png in Resources */ = {isa = PBXBuildFile; fileRef = B44639441D3624D7000081DC /* 现金支付.png */; };
-		B4463A1C1D3624D8000081DC /* 积分支付.png in Resources */ = {isa = PBXBuildFile; fileRef = B44639451D3624D7000081DC /* 积分支付.png */; };
 		B4463A1D1D3624D8000081DC /* NSArray+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B446394A1D3624D7000081DC /* NSArray+YYAdd.m */; };
 		B4463A1E1D3624D8000081DC /* NSBundle+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B446394C1D3624D7000081DC /* NSBundle+YYAdd.m */; };
 		B4463A1F1D3624D8000081DC /* NSData+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B446394E1D3624D7000081DC /* NSData+YYAdd.m */; };
@@ -150,6 +147,8 @@
 		B4463A711D36252D000081DC /* HYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A701D36252D000081DC /* HYNetworkManager.m */; };
 		B4463A741D362A83000081DC /* HGetParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A731D362A83000081DC /* HGetParameters.m */; };
 		B4463A771D362C53000081DC /* HYAFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */; };
+		B47827F91D3DCFAF003631F1 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */; };
+		B4B1B9691D39D24000688214 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B4B1B9681D39D24000688214 /* test.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,9 +271,6 @@
 		B44639401D3624D7000081DC /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		B44639411D3624D7000081DC /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		B44639421D3624D7000081DC /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		B44639431D3624D7000081DC /* 现金加积分.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "现金加积分.png"; sourceTree = "<group>"; };
-		B44639441D3624D7000081DC /* 现金支付.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "现金支付.png"; sourceTree = "<group>"; };
-		B44639451D3624D7000081DC /* 积分支付.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "积分支付.png"; sourceTree = "<group>"; };
 		B44639491D3624D7000081DC /* NSArray+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YYAdd.h"; sourceTree = "<group>"; };
 		B446394A1D3624D7000081DC /* NSArray+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YYAdd.m"; sourceTree = "<group>"; };
 		B446394B1D3624D7000081DC /* NSBundle+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+YYAdd.h"; sourceTree = "<group>"; };
@@ -445,6 +441,9 @@
 		B4463A731D362A83000081DC /* HGetParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGetParameters.m; sourceTree = "<group>"; };
 		B4463A751D362C53000081DC /* HYAFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAFHTTPSessionManager.h; sourceTree = "<group>"; };
 		B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAFHTTPSessionManager.m; sourceTree = "<group>"; };
+		B47827F71D3DCFAF003631F1 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		B4B1B9681D39D24000688214 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +524,7 @@
 		B44637591D35ED4A000081DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B4B1B9681D39D24000688214 /* test.jpeg */,
 				B44638A61D35EE63000081DC /* libz.tbd */,
 				B44638A41D35EE5C000081DC /* libsqlite3.tbd */,
 				B44638A21D35EE4F000081DC /* SystemConfiguration.framework */,
@@ -679,9 +679,6 @@
 				B44639401D3624D7000081DC /* UIImageView+WebCache.m */,
 				B44639411D3624D7000081DC /* UIView+WebCacheOperation.h */,
 				B44639421D3624D7000081DC /* UIView+WebCacheOperation.m */,
-				B44639431D3624D7000081DC /* 现金加积分.png */,
-				B44639441D3624D7000081DC /* 现金支付.png */,
-				B44639451D3624D7000081DC /* 积分支付.png */,
 			);
 			path = SDWebImage;
 			sourceTree = "<group>";
@@ -868,6 +865,8 @@
 				B44639DA1D3624D8000081DC /* YYLabel.m */,
 				B44639DB1D3624D8000081DC /* YYTextView.h */,
 				B44639DC1D3624D8000081DC /* YYTextView.m */,
+				B47827F71D3DCFAF003631F1 /* YYFPSLabel.h */,
+				B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -1069,11 +1068,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4463A1B1D3624D8000081DC /* 现金支付.png in Resources */,
-				B4463A1C1D3624D8000081DC /* 积分支付.png in Resources */,
 				B44637691D35ED4A000081DC /* LaunchScreen.storyboard in Resources */,
+				B4B1B9691D39D24000688214 /* test.jpeg in Resources */,
 				B44637661D35ED4A000081DC /* Assets.xcassets in Resources */,
-				B4463A1A1D3624D8000081DC /* 现金加积分.png in Resources */,
 				B44637641D35ED4A000081DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1141,6 +1138,7 @@
 				B4463A1D1D3624D8000081DC /* NSArray+YYAdd.m in Sources */,
 				B4463A621D3624D8000081DC /* YYAsyncLayer.m in Sources */,
 				B4463A431D3624D8000081DC /* UIImageView+YYWebImage.m in Sources */,
+				B47827F91D3DCFAF003631F1 /* YYFPSLabel.m in Sources */,
 				B4463A081D3624D8000081DC /* UIRefreshControl+AFNetworking.m in Sources */,
 				B4463A3E1D3624D8000081DC /* YYMemoryCache.m in Sources */,
 				B4463A6C1D3624D8000081DC /* YYTransaction.m in Sources */,
@@ -1448,6 +1446,7 @@
 				B44637851D35ED4B000081DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B44637861D35ED4B000081DC /* Build configuration list for PBXNativeTarget "YYKitDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -1456,6 +1455,7 @@
 				B44637881D35ED4B000081DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B44637891D35ED4B000081DC /* Build configuration list for PBXNativeTarget "YYKitDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -1464,6 +1464,7 @@
 				B446378B1D35ED4B000081DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
