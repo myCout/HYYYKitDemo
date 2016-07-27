@@ -11,6 +11,8 @@
 #import "HYNetworkManager.h"
 #import "UIImageView+WebCache.h"
 #import "YYFPSLabel.h"
+#import "HDownLoadImgInstance.h"
+
 @interface ViewController ()
 
 @end
@@ -23,11 +25,26 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    YYFPSLabel *fps = [YYFPSLabel new];
-    fps.top = 64;
-    [self.view addSubview:fps];
+//    YYFPSLabel *fps = [YYFPSLabel new];
+//    fps.top = 64;
+//    [self.view addSubview:fps];
     
-    [self btnInit];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, self.view.width - 20, 150)];
+    label.text = @"After purchasing, make sure to log into Daily Yoga account on all your devices to access the premium features.";
+    //清空背景颜色
+    label.backgroundColor = [UIColor brownColor];
+    //设置字体颜色为白色
+    label.textColor = [UIColor whiteColor];
+    //文字居中显示
+    label.textAlignment = NSTextAlignmentCenter;
+    //自动折行设置
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.numberOfLines = 0;
+//    label.font = [UIFont systemFontOfSize:11];
+    [self.view addSubview:label];
+//    [self btnInit];
+    
+    [[HDownLoadImgInstance sharedInstance] downLoadImgWith:nil];
 }
 
 

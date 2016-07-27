@@ -148,6 +148,7 @@
 		B4463A741D362A83000081DC /* HGetParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A731D362A83000081DC /* HGetParameters.m */; };
 		B4463A771D362C53000081DC /* HYAFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */; };
 		B47827F91D3DCFAF003631F1 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */; };
+		B49559201D484909006A4B2C /* HDownLoadImgInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */; };
 		B4B1B9691D39D24000688214 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B4B1B9681D39D24000688214 /* test.jpeg */; };
 /* End PBXBuildFile section */
 
@@ -443,6 +444,8 @@
 		B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAFHTTPSessionManager.m; sourceTree = "<group>"; };
 		B47827F71D3DCFAF003631F1 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		B495591E1D484909006A4B2C /* HDownLoadImgInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDownLoadImgInstance.h; sourceTree = "<group>"; };
+		B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDownLoadImgInstance.m; sourceTree = "<group>"; };
 		B4B1B9681D39D24000688214 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -507,6 +510,7 @@
 		B44637581D35ED4A000081DC /* YYKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B495591D1D4848D7006A4B2C /* HCustomFile */,
 				B44638F41D3624D7000081DC /* ThirdLibary */,
 				B446375C1D35ED4A000081DC /* AppDelegate.h */,
 				B446375D1D35ED4A000081DC /* AppDelegate.m */,
@@ -965,6 +969,15 @@
 			path = HYNetworkManager;
 			sourceTree = "<group>";
 		};
+		B495591D1D4848D7006A4B2C /* HCustomFile */ = {
+			isa = PBXGroup;
+			children = (
+				B495591E1D484909006A4B2C /* HDownLoadImgInstance.h */,
+				B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */,
+			);
+			path = HCustomFile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1099,6 +1112,7 @@
 				B4463A141D3624D8000081DC /* UIImage+GIF.m in Sources */,
 				B4463A641D3624D8000081DC /* YYFileHash.m in Sources */,
 				B4463A351D3624D8000081DC /* UIImage+YYAdd.m in Sources */,
+				B49559201D484909006A4B2C /* HDownLoadImgInstance.m in Sources */,
 				B4463A401D3624D8000081DC /* CALayer+YYWebImage.m in Sources */,
 				B4463A651D3624D8000081DC /* YYGestureRecognizer.m in Sources */,
 				B4463A6B1D3624D8000081DC /* YYTimer.m in Sources */,
@@ -1362,7 +1376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1374,7 +1388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
