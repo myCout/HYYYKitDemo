@@ -148,6 +148,7 @@
 		B4463A741D362A83000081DC /* HGetParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A731D362A83000081DC /* HGetParameters.m */; };
 		B4463A771D362C53000081DC /* HYAFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */; };
 		B47827F91D3DCFAF003631F1 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */; };
+		B48BC0671D49ABF800DFC174 /* UITableView+CellHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B48BC0661D49ABF800DFC174 /* UITableView+CellHeightCache.m */; };
 		B49559201D484909006A4B2C /* HDownLoadImgInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */; };
 		B4B1B9691D39D24000688214 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B4B1B9681D39D24000688214 /* test.jpeg */; };
 /* End PBXBuildFile section */
@@ -444,6 +445,8 @@
 		B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAFHTTPSessionManager.m; sourceTree = "<group>"; };
 		B47827F71D3DCFAF003631F1 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		B48BC0651D49ABF800DFC174 /* UITableView+CellHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CellHeightCache.h"; sourceTree = "<group>"; };
+		B48BC0661D49ABF800DFC174 /* UITableView+CellHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CellHeightCache.m"; sourceTree = "<group>"; };
 		B495591E1D484909006A4B2C /* HDownLoadImgInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDownLoadImgInstance.h; sourceTree = "<group>"; };
 		B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDownLoadImgInstance.m; sourceTree = "<group>"; };
 		B4B1B9681D39D24000688214 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
@@ -969,11 +972,29 @@
 			path = HYNetworkManager;
 			sourceTree = "<group>";
 		};
+		B48BC0631D49ABF800DFC174 /* HCustomCategory */ = {
+			isa = PBXGroup;
+			children = (
+				B48BC0641D49ABF800DFC174 /* UITableView+CellHeightCache */,
+			);
+			path = HCustomCategory;
+			sourceTree = "<group>";
+		};
+		B48BC0641D49ABF800DFC174 /* UITableView+CellHeightCache */ = {
+			isa = PBXGroup;
+			children = (
+				B48BC0651D49ABF800DFC174 /* UITableView+CellHeightCache.h */,
+				B48BC0661D49ABF800DFC174 /* UITableView+CellHeightCache.m */,
+			);
+			path = "UITableView+CellHeightCache";
+			sourceTree = "<group>";
+		};
 		B495591D1D4848D7006A4B2C /* HCustomFile */ = {
 			isa = PBXGroup;
 			children = (
 				B495591E1D484909006A4B2C /* HDownLoadImgInstance.h */,
 				B495591F1D484909006A4B2C /* HDownLoadImgInstance.m */,
+				B48BC0631D49ABF800DFC174 /* HCustomCategory */,
 			);
 			path = HCustomFile;
 			sourceTree = "<group>";
@@ -1204,6 +1225,7 @@
 				B4463A091D3624D8000081DC /* UIWebView+AFNetworking.m in Sources */,
 				B4463A611D3624D8000081DC /* YYTextView.m in Sources */,
 				B4463A251D3624D8000081DC /* NSObject+YYAdd.m in Sources */,
+				B48BC0671D49ABF800DFC174 /* UITableView+CellHeightCache.m in Sources */,
 				B4463A0A1D3624D8000081DC /* MKAnnotationView+WebCache.m in Sources */,
 				B44639FA1D3624D8000081DC /* AFHTTPSessionManager.m in Sources */,
 				B4463A551D3624D8000081DC /* YYTextMagnifier.m in Sources */,
@@ -1376,7 +1398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1388,7 +1410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
