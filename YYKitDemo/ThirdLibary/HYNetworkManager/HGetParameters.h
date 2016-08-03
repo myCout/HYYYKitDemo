@@ -28,4 +28,5 @@
  *  登录接口调用
  */
 +(NSMutableDictionary*)getLogInPara:(NSDictionary *)paraDic;
+
 @end

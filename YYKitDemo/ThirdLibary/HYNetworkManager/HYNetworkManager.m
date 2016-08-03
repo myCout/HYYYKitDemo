@@ -187,7 +187,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     //Get请求
     if (requestType==RequestTypeGet)
     {
-        [[HYAFHTTPSessionManager sharedClient] GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        [[HYAFHTTPSessionManager sharedClient] GET:url parameters:HYGetParameters(params) success:^(NSURLSessionDataTask *task, id responseObject) {
              [weakSelf dealWithResponseObject:responseObject cacheUrl:allUrl cacheData:cacheData isCache:isCache cache:cache cacheKey:cacheKey];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             [weakSelf showError:@"请检查网络设置"];
@@ -195,7 +195,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     }
     else if (requestType==RequestTypePost)
     {
-        [[HYAFHTTPSessionManager sharedClient] POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[HYAFHTTPSessionManager sharedClient] POST:url parameters:HYGetParameters(params) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
             [weakSelf dealWithResponseObject:responseObject cacheUrl:allUrl cacheData:cacheData isCache:isCache cache:cache cacheKey:cacheKey];
             
@@ -240,7 +240,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     }
     
 }
-#pragma mark  统一处理请求到的数据
+#pragma mark  - 统一处理请求到的数据
 -(void)dealWithResponseObject:(id)responseData cacheUrl:(NSString *)cacheUrl cacheData:(id)cacheData isCache:(BOOL)isCache cache:(YYCache*)cache cacheKey:(NSString *)cacheKey  //cacheData暂不理会
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -248,12 +248,13 @@ typedef NS_ENUM(NSInteger, RequestType) {
     });
     
     /**
-     因为 测试用的天气接口返回的数据格式不标准，
+     因为 测试用的天气接口返回的数据格式不标准，注释掉 的是标准结构解析方式
      */
 //    NSString * dataString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 //    dataString = [self deleteSpecialCodeWithStr:dataString];
 //    DYLog(@"response\n%@\n",dataString);
 //    NSData *requestData = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+//    
 //    if (isCache) {
 //        //需要缓存,就进行缓存
 //        [cache setObject:requestData forKey:cacheKey];
@@ -264,12 +265,22 @@ typedef NS_ENUM(NSInteger, RequestType) {
 //    }
 //    //不管缓不缓存都要显示数据
 //    [self returnDataWithRequestData:requestData];
+
+    /**
+     不标准结构直接返回数据
+     */
     
-    
-    NSDictionary *weatherData = (NSDictionary*)responseData;
-    NSLog(@"weatherData = %@",weatherData[@"weatherinfo"]);
-    
-    
+    if (isCache) {
+        //需要缓存,就进行缓存
+        [cache setObject:responseData forKey:cacheKey];
+    }
+    //如果不缓存 或 数据不相同,就把网络返回的数据显示
+    if (!isCache || ![cacheData isEqual:responseData]) {
+//        [self returnDataWithRequestData:responseData];
+        [self showSuccess:responseData];
+    }
+    //不管缓不缓存都要显示数据
+    [self showSuccess:responseData];
 }
 
 #pragma mark - 根据返回的数据进行统一的格式处理-requestData 网络或者是缓存的数据-
@@ -353,7 +364,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     return pathStr;
     
 }
-#pragma mark -- 处理json格式的字符串中的换行符、回车符
+#pragma mark - 处理json格式的字符串中的换行符、回车符
 - (NSString *)deleteSpecialCodeWithStr:(NSString *)str {
     NSString *string = [str stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     string = [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -365,7 +376,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     return string;
 }
 
-#pragma mark  网络判断
+#pragma mark  - 网络判断
 -(BOOL)requestBeforeJudgeConnect
 {
     struct sockaddr zeroAddress;

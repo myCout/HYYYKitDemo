@@ -1,0 +1,27 @@
+//
+//  HYYKitDemo.pch
+//  YYKitDemo
+//
+//  Created by HY on 16/8/1.
+//  Copyright © 2016年 郝毅. All rights reserved.
+//
+
+#ifndef HYYKitDemo_pch
+#define HYYKitDemo_pch
+
+#ifdef DEBUG
+//#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#define NSLog(format, ...) NSLog((@"%s [Line %d] " format), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+
+#import "YYCGUtilities.h"
+#import "BFKit.h"
+#import "HYNetworkManager.h"
+#import "UIImageView+WebCache.h"
+#import "NSObject+YYModel.h"
+
+#endif /* HYYKitDemo_pch */

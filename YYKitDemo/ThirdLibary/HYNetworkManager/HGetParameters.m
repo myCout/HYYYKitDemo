@@ -8,13 +8,15 @@
 
 #import "HGetParameters.h"
 
+#define YG_Version  [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]
+
 @implementation HGetParameters
  
 static NSDictionary *userDict = nil;
 static NSDictionary *hostDict = nil;
 
 + (NSString*)getYGBaseUrl{
-    return @"http://www.weather.com.cn";//    测试用天气接口
+    return @"http://news-at.zhihu.com/api/4";//    测试用天气接口
 }
 
 + (id)getParametersInstance{
@@ -63,15 +65,15 @@ static NSDictionary *hostDict = nil;
         parameters = [NSMutableDictionary new];
     }
 //    if (![paraDic objectForKey:@"type"]) {
-//        [parameters setObject:@(YGDeviceType) forKey: @"type"];
+//        [parameters setObject:@(2) forKey: @"type"];
 //    }
-//    [parameters setObject:@(YGDeviceType) forKey: @"platform"];
+//    [parameters setObject:@(2) forKey: @"platform"];
 //    [parameters setObject:YG_Version  forKey:@"version"];
-//    [parameters setObject:@([NSString loadLanguageCode]) forKey: @"lang"];
-    [parameters setObject:@(time(NULL)) forKey: @"time"];
-//    [parameters setObject:@([NSTimeZone timeZoneOffset]) forKey: @"timezone"];
-//    [parameters setObject:YG_Channels forKey: @"channels"];
-//    
+//    [parameters setObject:@(2) forKey: @"lang"];
+//    [parameters setObject:@(time(NULL)) forKey: @"time"];
+//    [parameters setObject:@([HGetParameters timeZoneOffset]) forKey: @"timezone"];
+//    [parameters setObject:@"200001" forKey: @"channels"];
+//
 //    NSString *serviceSignString = [NSDictionary serviceloadSignFromParametersNSDictionary:parameters];
 //    NSString *signString = [NSDictionary loadSignFromParametersNSDictionary:parameters];
 //    [parameters setObject:serviceSignString forKey:@"sign"];
@@ -101,14 +103,5 @@ static NSDictionary *hostDict = nil;
 //    [parameters setObject:signString forKey:@"sign"];
     return parameters;
 }
-
-
-
-
-
-
-
-
-
 
 @end

@@ -13,9 +13,15 @@
 #import "YYFPSLabel.h"
 #import "HDownLoadImgInstance.h"
 #import "UITableView+CellHeightCache.h"
+#import "HYFirstVC.h"
+
+#import "HYStoryModel.h"
+#import "NSObject+YYModel.h"
+#import "HYSecondVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
+@property (nonatomic, retain) NSMutableArray *hDataSourceArray;
 @end
 
 @implementation ViewController
@@ -25,6 +31,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+//    _hDataSourceArray = @[@"下拉放大，上推缩小"];
+    _hDataSourceArray = [NSMutableArray new];
+    [_hDataSourceArray addObject:@"展示Cell"];
     
     [self initTableView];
 }
@@ -44,7 +53,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return _hDataSourceArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,8 +73,21 @@
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSUInteger row = indexPath.row;
+    switch (row) {
+        case 0:
+        {
+            HYFirstVC *hyFirstVC = [HYFirstVC new];
+            [self.navigationController pushViewController:hyFirstVC animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     //这样生成的key在数据源发生改变时会出现问题，可以用数据源对应的model添加key来实现
     NSString *key = [NSString stringWithFormat:@"%ld:%ld",(long)indexPath.section,(long)indexPath.row];
@@ -79,9 +101,11 @@
     
     return cellHeight;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 10;
 }
+
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] init];
     return headerView;
@@ -175,15 +199,7 @@
     
     
 }
-- (void)ttttClick{
-    [[HYNetworkManager sharedInstance] httpGetRequest:@"/data/sk/101010100.html" params:nil onCompletionBlock:^(NSString *error, NSDictionary *resposeData) {
-        if (!error) {
-            NSLog(@"resposeData = %@",resposeData);
-        }else{
-            NSLog(@"error = %@",error);
-        }
-    }];
-}
+
 #pragma mark - CustomDelegate
 
 #pragma mark - Event response
