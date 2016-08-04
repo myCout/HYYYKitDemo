@@ -148,8 +148,15 @@
 		B4463A741D362A83000081DC /* HGetParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A731D362A83000081DC /* HGetParameters.m */; };
 		B4463A771D362C53000081DC /* HYAFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */; };
 		B47827F91D3DCFAF003631F1 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */; };
+		B47E7ACA1D52D3E800B6FEA5 /* HEmailTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E7AC91D52D3E800B6FEA5 /* HEmailTextField.m */; };
+		B47E7ACE1D52D51000B6FEA5 /* HEmailTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E7ACD1D52D51000B6FEA5 /* HEmailTextCell.m */; };
+		B47E7AD21D52D6A500B6FEA5 /* PromptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E7AD01D52D6A500B6FEA5 /* PromptTableViewCell.m */; };
+		B47E7AD31D52D6A500B6FEA5 /* PromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47E7AD11D52D6A500B6FEA5 /* PromptTableViewCell.xib */; };
+		B47E7AD71D52D78200B6FEA5 /* HYSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E7AD61D52D78200B6FEA5 /* HYSecondVC.m */; };
+		B47E7ADB1D52D7F700B6FEA5 /* HYThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B47E7ADA1D52D7F700B6FEA5 /* HYThirdVC.m */; };
 		B487CED21D51BAC100BDDA61 /* HYStoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B487CED11D51BAC100BDDA61 /* HYStoryModel.m */; };
-		B487CED61D51BEF300BDDA61 /* HYSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B487CED51D51BEF300BDDA61 /* HYSecondVC.m */; };
+		B487CED91D51E7E900BDDA61 /* UILabel+FontChange.m in Sources */ = {isa = PBXBuildFile; fileRef = B487CED81D51E7E900BDDA61 /* UILabel+FontChange.m */; };
+		B487CEDC1D51E89100BDDA61 /* Chancery.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B487CEDB1D51E89100BDDA61 /* Chancery.ttf */; };
 		B48BC0671D49ABF800DFC174 /* UITableView+CellHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B48BC0661D49ABF800DFC174 /* UITableView+CellHeightCache.m */; };
 		B48BC0701D4A01C500DFC174 /* HYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B48BC06F1D4A01C500DFC174 /* HYBaseViewController.m */; };
 		B48BC0731D4A01EC00DFC174 /* HYFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B48BC0721D4A01EC00DFC174 /* HYFirstVC.m */; };
@@ -491,10 +498,22 @@
 		B4463A761D362C53000081DC /* HYAFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAFHTTPSessionManager.m; sourceTree = "<group>"; };
 		B47827F71D3DCFAF003631F1 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		B47827F81D3DCFAF003631F1 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		B47E7AC81D52D3E800B6FEA5 /* HEmailTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEmailTextField.h; sourceTree = "<group>"; };
+		B47E7AC91D52D3E800B6FEA5 /* HEmailTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEmailTextField.m; sourceTree = "<group>"; };
+		B47E7ACC1D52D51000B6FEA5 /* HEmailTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HEmailTextCell.h; sourceTree = "<group>"; };
+		B47E7ACD1D52D51000B6FEA5 /* HEmailTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HEmailTextCell.m; sourceTree = "<group>"; };
+		B47E7ACF1D52D6A500B6FEA5 /* PromptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptTableViewCell.h; sourceTree = "<group>"; };
+		B47E7AD01D52D6A500B6FEA5 /* PromptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptTableViewCell.m; sourceTree = "<group>"; };
+		B47E7AD11D52D6A500B6FEA5 /* PromptTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptTableViewCell.xib; sourceTree = "<group>"; };
+		B47E7AD51D52D78200B6FEA5 /* HYSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSecondVC.h; sourceTree = "<group>"; };
+		B47E7AD61D52D78200B6FEA5 /* HYSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSecondVC.m; sourceTree = "<group>"; };
+		B47E7AD91D52D7F700B6FEA5 /* HYThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYThirdVC.h; sourceTree = "<group>"; };
+		B47E7ADA1D52D7F700B6FEA5 /* HYThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYThirdVC.m; sourceTree = "<group>"; };
 		B487CED01D51BAC100BDDA61 /* HYStoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYStoryModel.h; sourceTree = "<group>"; };
 		B487CED11D51BAC100BDDA61 /* HYStoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYStoryModel.m; sourceTree = "<group>"; };
-		B487CED41D51BEF300BDDA61 /* HYSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSecondVC.h; sourceTree = "<group>"; };
-		B487CED51D51BEF300BDDA61 /* HYSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSecondVC.m; sourceTree = "<group>"; };
+		B487CED71D51E7E900BDDA61 /* UILabel+FontChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FontChange.h"; sourceTree = "<group>"; };
+		B487CED81D51E7E900BDDA61 /* UILabel+FontChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FontChange.m"; sourceTree = "<group>"; };
+		B487CEDB1D51E89100BDDA61 /* Chancery.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chancery.ttf; sourceTree = "<group>"; };
 		B48BC0651D49ABF800DFC174 /* UITableView+CellHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+CellHeightCache.h"; sourceTree = "<group>"; };
 		B48BC0661D49ABF800DFC174 /* UITableView+CellHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+CellHeightCache.m"; sourceTree = "<group>"; };
 		B48BC06E1D4A01C500DFC174 /* HYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseViewController.h; sourceTree = "<group>"; };
@@ -675,6 +694,7 @@
 				B44637671D35ED4A000081DC /* LaunchScreen.storyboard */,
 				B446376A1D35ED4A000081DC /* Info.plist */,
 				B49B0D021D4EEAB600410E02 /* HYYKitDemo.pch */,
+				B487CEDA1D51E89100BDDA61 /* HYResource */,
 				B44637591D35ED4A000081DC /* Supporting Files */,
 			);
 			path = YYKitDemo;
@@ -1125,6 +1145,45 @@
 			path = HYNetworkManager;
 			sourceTree = "<group>";
 		};
+		B47E7AC71D52D3E800B6FEA5 /* HEmailTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B47E7AC81D52D3E800B6FEA5 /* HEmailTextField.h */,
+				B47E7AC91D52D3E800B6FEA5 /* HEmailTextField.m */,
+			);
+			path = HEmailTextField;
+			sourceTree = "<group>";
+		};
+		B47E7ACB1D52D4FB00B6FEA5 /* HEmailTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				B47E7ACC1D52D51000B6FEA5 /* HEmailTextCell.h */,
+				B47E7ACD1D52D51000B6FEA5 /* HEmailTextCell.m */,
+				B47E7ACF1D52D6A500B6FEA5 /* PromptTableViewCell.h */,
+				B47E7AD01D52D6A500B6FEA5 /* PromptTableViewCell.m */,
+				B47E7AD11D52D6A500B6FEA5 /* PromptTableViewCell.xib */,
+			);
+			path = HEmailTextCell;
+			sourceTree = "<group>";
+		};
+		B47E7AD41D52D78200B6FEA5 /* HYSecondVC */ = {
+			isa = PBXGroup;
+			children = (
+				B47E7AD51D52D78200B6FEA5 /* HYSecondVC.h */,
+				B47E7AD61D52D78200B6FEA5 /* HYSecondVC.m */,
+			);
+			path = HYSecondVC;
+			sourceTree = "<group>";
+		};
+		B47E7AD81D52D7D900B6FEA5 /* HYThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				B47E7AD91D52D7F700B6FEA5 /* HYThirdVC.h */,
+				B47E7ADA1D52D7F700B6FEA5 /* HYThirdVC.m */,
+			);
+			path = HYThirdVC;
+			sourceTree = "<group>";
+		};
 		B487CECE1D51BAC100BDDA61 /* HYModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,20 +1201,20 @@
 			path = HYStoryModel;
 			sourceTree = "<group>";
 		};
-		B487CED31D51BEBE00BDDA61 /* HYSecondVC */ = {
+		B487CEDA1D51E89100BDDA61 /* HYResource */ = {
 			isa = PBXGroup;
 			children = (
-				B487CED41D51BEF300BDDA61 /* HYSecondVC.h */,
-				B487CED51D51BEF300BDDA61 /* HYSecondVC.m */,
+				B487CEDB1D51E89100BDDA61 /* Chancery.ttf */,
 			);
-			name = HYSecondVC;
-			path = HYFirstVC/HYSecondVC;
+			path = HYResource;
 			sourceTree = "<group>";
 		};
 		B48BC0631D49ABF800DFC174 /* HCustomCategory */ = {
 			isa = PBXGroup;
 			children = (
 				B48BC0641D49ABF800DFC174 /* UITableView+CellHeightCache */,
+				B487CED71D51E7E900BDDA61 /* UILabel+FontChange.h */,
+				B487CED81D51E7E900BDDA61 /* UILabel+FontChange.m */,
 			);
 			path = HCustomCategory;
 			sourceTree = "<group>";
@@ -1175,7 +1234,8 @@
 				B48BC06E1D4A01C500DFC174 /* HYBaseViewController.h */,
 				B48BC06F1D4A01C500DFC174 /* HYBaseViewController.m */,
 				B48BC06D1D4A019700DFC174 /* HYFirstVC */,
-				B487CED31D51BEBE00BDDA61 /* HYSecondVC */,
+				B47E7AD41D52D78200B6FEA5 /* HYSecondVC */,
+				B47E7AD81D52D7D900B6FEA5 /* HYThirdVC */,
 			);
 			path = HCustomVC;
 			sourceTree = "<group>";
@@ -1202,6 +1262,7 @@
 		B49B0D051D4EF0F800410E02 /* HCutsomView */ = {
 			isa = PBXGroup;
 			children = (
+				B47E7AC71D52D3E800B6FEA5 /* HEmailTextField */,
 				B49B0D061D4EF0F800410E02 /* HCustomCell */,
 			);
 			path = HCutsomView;
@@ -1212,6 +1273,7 @@
 			children = (
 				B49B0D081D4EF12F00410E02 /* HBaseTableViewCell.h */,
 				B49B0D091D4EF12F00410E02 /* HBaseTableViewCell.m */,
+				B47E7ACB1D52D4FB00B6FEA5 /* HEmailTextCell */,
 				B49B0D071D4EF0F800410E02 /* HHomePageCell */,
 			);
 			path = HCustomCell;
@@ -1466,9 +1528,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49B0D951D4EFB4000410E02 /* BFKit.strings in Resources */,
+				B487CEDC1D51E89100BDDA61 /* Chancery.ttf in Resources */,
 				B44637691D35ED4A000081DC /* LaunchScreen.storyboard in Resources */,
 				B4B1B9691D39D24000688214 /* test.jpeg in Resources */,
 				B44637661D35ED4A000081DC /* Assets.xcassets in Resources */,
+				B47E7AD31D52D6A500B6FEA5 /* PromptTableViewCell.xib in Resources */,
 				B44637641D35ED4A000081DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1525,6 +1589,7 @@
 				B4463A2C1D3624D8000081DC /* YYCGUtilities.m in Sources */,
 				B4463A301D3624D8000081DC /* UIColor+YYAdd.m in Sources */,
 				B4463A6A1D3624D8000081DC /* YYThreadSafeDictionary.m in Sources */,
+				B47E7AD21D52D6A500B6FEA5 /* PromptTableViewCell.m in Sources */,
 				B4463A071D3624D8000081DC /* UIProgressView+AFNetworking.m in Sources */,
 				B4463A3D1D3624D8000081DC /* YYKVStorage.m in Sources */,
 				B4463A131D3624D8000081DC /* UIButton+WebCache.m in Sources */,
@@ -1532,6 +1597,7 @@
 				B4463A011D3624D8000081DC /* AFURLSessionManager.m in Sources */,
 				B4463A151D3624D8000081DC /* UIImage+MultiFormat.m in Sources */,
 				B49B0D841D4EFB4000410E02 /* UIScrollView+BFKit.m in Sources */,
+				B47E7AD71D52D78200B6FEA5 /* HYSecondVC.m in Sources */,
 				B49B0D891D4EFB4000410E02 /* UIView+BFKit.m in Sources */,
 				B44639FF1D3624D8000081DC /* AFURLRequestSerialization.m in Sources */,
 				B4463A4C1D3624D8000081DC /* NSObject+YYModel.m in Sources */,
@@ -1569,7 +1635,6 @@
 				B4463A591D3624D8000081DC /* UIPasteboard+YYText.m in Sources */,
 				B4463A561D3624D8000081DC /* YYTextSelectionView.m in Sources */,
 				B49B0D781D4EFB4000410E02 /* NSString+BFKit.m in Sources */,
-				B487CED61D51BEF300BDDA61 /* HYSecondVC.m in Sources */,
 				B4463A4A1D3624D8000081DC /* YYWebImageManager.m in Sources */,
 				B49B0D7A1D4EFB4000410E02 /* UIBarButtonItem+BFKit.m in Sources */,
 				B49B0D701D4EFB4000410E02 /* NSDate+BFKit.m in Sources */,
@@ -1589,6 +1654,7 @@
 				B49B0D901D4EFB4000410E02 /* BFLog.m in Sources */,
 				B4463A6D1D3624D8000081DC /* YYWeakProxy.m in Sources */,
 				B4463A3F1D3624D8000081DC /* _YYWebImageSetter.m in Sources */,
+				B487CED91D51E7E900BDDA61 /* UILabel+FontChange.m in Sources */,
 				B4463A741D362A83000081DC /* HGetParameters.m in Sources */,
 				B4463A041D3624D8000081DC /* UIAlertView+AFNetworking.m in Sources */,
 				B4463A5C1D3624D8000081DC /* YYTextParser.m in Sources */,
@@ -1621,6 +1687,7 @@
 				B4463A391D3624D8000081DC /* UITextField+YYAdd.m in Sources */,
 				B4463A421D3624D8000081DC /* UIButton+YYWebImage.m in Sources */,
 				B4463A501D3624D8000081DC /* YYTextEffectWindow.m in Sources */,
+				B47E7ADB1D52D7F700B6FEA5 /* HYThirdVC.m in Sources */,
 				B4463A091D3624D8000081DC /* UIWebView+AFNetworking.m in Sources */,
 				B4463A611D3624D8000081DC /* YYTextView.m in Sources */,
 				B4463A251D3624D8000081DC /* NSObject+YYAdd.m in Sources */,
@@ -1630,6 +1697,7 @@
 				B4463A0A1D3624D8000081DC /* MKAnnotationView+WebCache.m in Sources */,
 				B44639FA1D3624D8000081DC /* AFHTTPSessionManager.m in Sources */,
 				B4463A551D3624D8000081DC /* YYTextMagnifier.m in Sources */,
+				B47E7ACA1D52D3E800B6FEA5 /* HEmailTextField.m in Sources */,
 				B44639FB1D3624D8000081DC /* AFNetworkReachabilityManager.m in Sources */,
 				B4463A221D3624D8000081DC /* NSKeyedUnarchiver+YYAdd.m in Sources */,
 				B4463A121D3624D8000081DC /* SDWebImagePrefetcher.m in Sources */,
@@ -1661,6 +1729,7 @@
 				B4463A0C1D3624D8000081DC /* SDImageCache.m in Sources */,
 				B4463A771D362C53000081DC /* HYAFHTTPSessionManager.m in Sources */,
 				B4463A331D3624D8000081DC /* UIFont+YYAdd.m in Sources */,
+				B47E7ACE1D52D51000B6FEA5 /* HEmailTextCell.m in Sources */,
 				B49B0D721D4EFB4000410E02 /* NSFileManager+BFKit.m in Sources */,
 				B4463A281D3624D8000081DC /* NSString+YYAdd.m in Sources */,
 				B4463A511D3624D8000081DC /* YYTextInput.m in Sources */,
@@ -1830,8 +1899,10 @@
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1842,8 +1913,10 @@
 				INFOPLIST_FILE = YYKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = HaoYi.YYKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

@@ -18,6 +18,7 @@
 #import "HYStoryModel.h"
 #import "NSObject+YYModel.h"
 #import "HYSecondVC.h"
+#import "HYThirdVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
@@ -34,7 +35,8 @@
 //    _hDataSourceArray = @[@"下拉放大，上推缩小"];
     _hDataSourceArray = [NSMutableArray new];
     [_hDataSourceArray addObject:@"展示Cell"];
-    
+    [_hDataSourceArray addObject:@"Runtime学习"];
+    [_hDataSourceArray addObject:@"EmailTextField"];
     [self initTableView];
 }
 
@@ -63,9 +65,10 @@
     
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Cell %ld", (long)indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", _hDataSourceArray[indexPath.row]];
     
     return cell;
 }
@@ -79,6 +82,18 @@
         {
             HYFirstVC *hyFirstVC = [HYFirstVC new];
             [self.navigationController pushViewController:hyFirstVC animated:YES];
+        }
+            break;
+        case 1:
+        {
+            HYSecondVC *hySecondVC = [HYSecondVC new];
+            [self.navigationController pushViewController:hySecondVC animated:YES];
+        }
+            break;
+        case 2:
+        {
+            HYThirdVC  *hyThirdVC = [HYThirdVC new];
+            [self.navigationController pushViewController:hyThirdVC animated:YES];
         }
             break;
             

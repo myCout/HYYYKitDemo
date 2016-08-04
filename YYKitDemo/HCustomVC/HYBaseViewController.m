@@ -9,5 +9,14 @@
 #import "HYBaseViewController.h"
 
 @implementation HYBaseViewController
+- (void) viewDidLoad{
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
 
 @end
