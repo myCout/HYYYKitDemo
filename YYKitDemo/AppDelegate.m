@@ -8,18 +8,80 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "HYFirstVC.h"
+#import "HTwoVC.h"
+#import "HThreeVC.h"
+#import "HFourVC.h"
+
+#import "HYTabBarControllerConfig.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+static BOOL flagError = NO;
+void UncaughtExceptionHandler(NSException *exception) {
+    if (!flagError) {
+        flagError = YES;
+        NSArray *arr = [exception callStackSymbols];//得到当前调用栈信息
+        NSString *reason = [exception reason];//非常重要，就是崩溃的原因
+        NSString *name = [exception name];//异常类型
+        NSDictionary *userInfo = [exception userInfo];//异常类型
+        
+        NSString*crashLogInfo = [NSString stringWithFormat:@"name: %@   reason : %@   arr : %@   userInfo:%@", name, reason, arr,userInfo];
+        NSDictionary *dict = @{@"deadline":@"10001",@"errormsg":crashLogInfo};
+//        [YGStoreObserver ipaErrorOrderLog:dict];
+        NSLog(@"捕捉到异常闪退日志 ，可以上报服务器 %@",dict);
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ViewController *vc = [[ViewController alloc] init];
-    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = naviVC;
+    // 设置主窗口,并设置根控制器
+    self.window = [[UIWindow alloc]init];
+    self.window.frame = [UIScreen mainScreen].bounds;
+    HYTabBarControllerConfig *tabBarControllerConfig = [[HYTabBarControllerConfig alloc] init];
+    [self.window setRootViewController:tabBarControllerConfig.tabBarController];
+    [self.window makeKeyAndVisible];
+    [self customizeInterface];
+    
     return YES;
+}
+- (void)customizeInterface {
+    [self setUpNavigationBarAppearance];
+}
+
+/**
+ *  设置navigationBar样式
+ */
+- (void)setUpNavigationBarAppearance {
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    
+    UIImage *backgroundImage = nil;
+    NSDictionary *textAttributes = nil;
+    if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
+        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
+        
+        textAttributes = @{
+                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18],
+                           NSForegroundColorAttributeName : [UIColor blackColor],
+                           };
+    } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
+        textAttributes = @{
+                           UITextAttributeFont : [UIFont boldSystemFontOfSize:18],
+                           UITextAttributeTextColor : [UIColor blackColor],
+                           UITextAttributeTextShadowColor : [UIColor clearColor],
+                           UITextAttributeTextShadowOffset : [NSValue valueWithUIOffset:UIOffsetZero],
+                           };
+#endif
+    }
+    
+    [navigationBarAppearance setBackgroundImage:backgroundImage
+                                  forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

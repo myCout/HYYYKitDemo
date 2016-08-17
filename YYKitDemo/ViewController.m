@@ -19,6 +19,8 @@
 #import "NSObject+YYModel.h"
 #import "HYSecondVC.h"
 #import "HYThirdVC.h"
+#import "HYTest4VC.h"
+#import "HYTest5VC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
@@ -37,6 +39,9 @@
     [_hDataSourceArray addObject:@"展示Cell"];
     [_hDataSourceArray addObject:@"Runtime学习"];
     [_hDataSourceArray addObject:@"EmailTextField"];
+    [_hDataSourceArray addObject:@"UICollectionView学习"];
+    [_hDataSourceArray addObject:@"KeyboardDemo"];
+    [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     [self initTableView];
 }
 
@@ -77,29 +82,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = indexPath.row;
+    HYBaseViewController *baseVC;
     switch (row) {
         case 0:
         {
-            HYFirstVC *hyFirstVC = [HYFirstVC new];
-            [self.navigationController pushViewController:hyFirstVC animated:YES];
+            baseVC = [HYFirstVC new];
+            
         }
             break;
         case 1:
         {
-            HYSecondVC *hySecondVC = [HYSecondVC new];
-            [self.navigationController pushViewController:hySecondVC animated:YES];
+            baseVC = [HYSecondVC new];
         }
             break;
         case 2:
         {
-            HYThirdVC  *hyThirdVC = [HYThirdVC new];
-            [self.navigationController pushViewController:hyThirdVC animated:YES];
+            baseVC = [HYThirdVC new];
+        }
+            break;
+        case 3:
+        {
+            baseVC = [HYTest4VC new];
+        }
+            break;
+        case 4:
+        {
+            baseVC = [HYTest5VC new];
         }
             break;
             
         default:
             break;
     }
+    baseVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:baseVC animated:YES];
 }
 
 
@@ -107,7 +123,7 @@
     //这样生成的key在数据源发生改变时会出现问题，可以用数据源对应的model添加key来实现
     NSString *key = [NSString stringWithFormat:@"%ld:%ld",(long)indexPath.section,(long)indexPath.row];
     CGFloat cellHeight = [tableView getCellHeightCacheWithCacheKey:key];
-    NSLog(@"从缓存取出来的-----%f",cellHeight);
+//    NSLog(@"从缓存取出来的-----%f",cellHeight);
     
     if(!cellHeight){
         cellHeight = 44;

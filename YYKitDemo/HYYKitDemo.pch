@@ -23,6 +23,6 @@
 #import "HYNetworkManager.h"
 #import "UIImageView+WebCache.h"
 #import "NSObject+YYModel.h"
-//#import "UILabel+FontChange.h"
-
+#import "BlocksKit.h"
+#import "UIView+YYAdd.h"
 #endif /* HYYKitDemo_pch */

@@ -13,6 +13,8 @@
 @interface HYSecondVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, retain) UITableView *hTableView;
 @property (nonatomic, retain) NSArray *hDataSourceArray;
+@property (nonatomic, retain) UIView *hTableHeadView;
+@property (nonatomic, retain) UIButton *hDontReClickBtn;
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *job;//
@@ -38,11 +40,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world"];
     
+//    [self.hTableHeadView addSubview:self.hDontReClickBtn];
+    
     _hTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     _hTableView.delegate = self;
     _hTableView.dataSource = self;
+    _hTableView.tableHeaderView = self.hTableHeadView;
     _hTableView.tableFooterView = [UIView new];
     [self.view addSubview:_hTableView];
+    
+//    @"解决UIButton多次点击(重复点击)",
 }
 
 
@@ -181,6 +188,12 @@
     }
 }
 
+-(void)hDontReClickBtnClicked
+{
+    NSLog(@"----------按钮禁止重复点击----------");
+    
+}
+
 - (void) eat{
     
 }
@@ -189,6 +202,24 @@
 }
 - (void) work{
     
+}
+
+#pragma mark - UI
+- (UIView*)hTableHeadView{
+    if (!_hTableHeadView) {
+        _hTableHeadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+        _hTableHeadView.backgroundColor = [UIColor grayColor];
+    }
+    return _hTableHeadView;
+}
+
+- (UIButton *)hDontReClickBtn{
+    if (!_hDontReClickBtn) {
+        _hDontReClickBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, 15, SCREEN_WIDTH - 30, 44)];
+        [_hDontReClickBtn setTitle:@"按钮禁止重复点击" forState:UIControlStateNormal];
+        [_hDontReClickBtn addTarget:self action:@selector(hDontReClickBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _hDontReClickBtn;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

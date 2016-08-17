@@ -12,6 +12,7 @@
 - (void) viewDidLoad{
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    NSLog(@"viewDidLoad: %@",[self class]);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
