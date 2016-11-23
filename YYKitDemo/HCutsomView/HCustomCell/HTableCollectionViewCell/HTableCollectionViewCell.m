@@ -107,10 +107,10 @@
     NSLog(@"section===%ld",(long)indexPath.section);
 }
 
-//返回这个UICollectionView是否可以被选择
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
+////返回这个UICollectionView是否可以被选择
+//-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
 
 @end

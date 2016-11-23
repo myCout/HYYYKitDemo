@@ -21,6 +21,7 @@
 
 #pragma mark - Life Cycle
 - (void) viewDidLoad {
+    [super viewDidLoad];
     [self initUI];
     [self netWorkTestClick];
 }

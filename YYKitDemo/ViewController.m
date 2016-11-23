@@ -21,7 +21,8 @@
 #import "HYThirdVC.h"
 #import "HYTest4VC.h"
 #import "HYTest5VC.h"
-
+#import "HJSWebView.h"
+#import "HWKWebView.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -41,7 +42,34 @@
     [_hDataSourceArray addObject:@"EmailTextField"];
     [_hDataSourceArray addObject:@"UICollectionView学习"];
     [_hDataSourceArray addObject:@"KeyboardDemo"];
+    [_hDataSourceArray addObject:@"OC_JS交互"];
+    [_hDataSourceArray addObject:@"WKWebView_OC_JS交互"];
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
+    
+
+//    // init group
+//    GCDGroup *group = [GCDGroup new];
+//    
+//    // add to group
+//    [[GCDQueue globalQueue] execute:^{
+//        // task one
+//        NSLog(@"task one");
+//    } inGroup:group];
+//    
+//    // add to group
+//    [[GCDQueue globalQueue] execute:^{
+//        // task two
+//        [GCDQueue executeInGlobalQueue:^{
+//             NSLog(@"task two");
+//        } afterDelaySecs:3];
+//    } inGroup:group];
+//    
+//    // notify in mainQueue
+//    [[GCDQueue mainQueue] notify:^{
+//        // task three
+//        NSLog(@"task three");
+//    } inGroup:group];
+    
     [self initTableView];
 }
 
@@ -108,6 +136,17 @@
         case 4:
         {
             baseVC = [HYTest5VC new];
+        }
+            break;
+            
+        case 5:
+        {
+            baseVC = [HJSWebView new];
+        }
+            break;
+        case 6:
+        {
+            baseVC = [HWKWebView new];
         }
             break;
             

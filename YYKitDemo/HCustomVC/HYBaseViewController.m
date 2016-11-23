@@ -13,6 +13,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     NSLog(@"viewDidLoad: %@",[self class]);
+//    NSLog(@"parentViewController%@",self.parentViewController.class);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

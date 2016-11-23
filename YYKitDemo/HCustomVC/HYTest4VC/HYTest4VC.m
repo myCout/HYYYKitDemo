@@ -8,6 +8,7 @@
 
 #import "HYTest4VC.h"
 #import "HUICollectionViewFlowLayout.h"
+#import "HYTest5VC.h"
 @interface HYTest4VC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, retain) UICollectionView *hUICollectionView;
@@ -101,9 +102,13 @@
     UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     //临时改变个颜色，看好，只是临时改变的。如果要永久改变，可以先改数据源，然后在cellForItemAtIndexPath中控制。（和UITableView差不多吧！O(∩_∩)O~）
     cell.backgroundColor = [UIColor greenColor];
-    NSLog(@"item======%ld",(long)indexPath.item);
-    NSLog(@"row=======%ld",(long)indexPath.row);
-    NSLog(@"section===%ld",(long)indexPath.section);
+//    NSLog(@"item======%ld",(long)indexPath.item);
+//    NSLog(@"row=======%ld",(long)indexPath.row);
+//    NSLog(@"section===%ld",(long)indexPath.section);
+//    HYTest5VC * test5 = [HYTest5VC new];
+//    [self presentViewController:test5 animated:YES completion:^{
+//        //
+//    }];
 }
 
 //返回这个UICollectionView是否可以被选择

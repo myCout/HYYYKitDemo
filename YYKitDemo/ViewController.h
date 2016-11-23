@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "HYBaseViewController.h"
+@interface ViewController :HYBaseViewController
 
 
 @end
