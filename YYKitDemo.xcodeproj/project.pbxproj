@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0453CFA71DBEF8CF009C5B65 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453CFA61DBEF8CF009C5B65 /* JavaScriptCore.framework */; };
 		0453CFA91DBEF902009C5B65 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453CFA81DBEF902009C5B65 /* libz.tbd */; };
-		0473673C1DED374000ADC795 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047367361DED374000ADC795 /* BaseNavigationController.m */; };
-		0473673D1DED374000ADC795 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047367381DED374000ADC795 /* BaseViewController.m */; };
-		0473673E1DED374000ADC795 /* ScreenShotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0473673B1DED374000ADC795 /* ScreenShotView.m */; };
 		0479E58A1DE531B800245249 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479E5871DE531B800245249 /* JPEngine.m */; };
 		0479E58B1DE531B800245249 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5881DE531B800245249 /* JSPatch.js */; };
 		0479E58C1DE531B800245249 /* lh.js in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5891DE531B800245249 /* lh.js */; };
@@ -26,7 +23,6 @@
 		0479E5A61DE594B100245249 /* index2.html in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5A51DE594B100245249 /* index2.html */; };
 		0479E5A81DE5984700245249 /* shake_sound_male.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5A71DE5984700245249 /* shake_sound_male.wav */; };
 		0479E5AB1DE5985E00245249 /* HLAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479E5AA1DE5985E00245249 /* HLAudioPlayer.m */; };
-		04831F411DE8300900CE8892 /* HKVCAndKVOVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04831F401DE8300900CE8892 /* HKVCAndKVOVC.m */; };
 		B4434C5F1D868B7A0058BB23 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B4434C581D868B7A0058BB23 /* GCDGroup.m */; };
 		B4434C601D868B7A0058BB23 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B4434C5A1D868B7A0058BB23 /* GCDQueue.m */; };
 		B4434C611D868B7A0058BB23 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = B4434C5C1D868B7A0058BB23 /* GCDSemaphore.m */; };
@@ -277,13 +273,6 @@
 /* Begin PBXFileReference section */
 		0453CFA61DBEF8CF009C5B65 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0453CFA81DBEF902009C5B65 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		047367351DED374000ADC795 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		047367361DED374000ADC795 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		047367371DED374000ADC795 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		047367381DED374000ADC795 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		047367391DED374000ADC795 /* ScreenShotBackConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotBackConfig.h; sourceTree = "<group>"; };
-		0473673A1DED374000ADC795 /* ScreenShotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotView.h; sourceTree = "<group>"; };
-		0473673B1DED374000ADC795 /* ScreenShotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShotView.m; sourceTree = "<group>"; };
 		0479E5861DE531B800245249 /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPEngine.h; path = JSPathLib/JPEngine.h; sourceTree = "<group>"; };
 		0479E5871DE531B800245249 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPEngine.m; path = JSPathLib/JPEngine.m; sourceTree = "<group>"; };
 		0479E5881DE531B800245249 /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = JSPatch.js; path = JSPathLib/JSPatch.js; sourceTree = "<group>"; };
@@ -307,8 +296,6 @@
 		0479E5A71DE5984700245249 /* shake_sound_male.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shake_sound_male.wav; sourceTree = "<group>"; };
 		0479E5A91DE5985E00245249 /* HLAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAudioPlayer.h; sourceTree = "<group>"; };
 		0479E5AA1DE5985E00245249 /* HLAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAudioPlayer.m; sourceTree = "<group>"; };
-		04831F3F1DE8300900CE8892 /* HKVCAndKVOVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKVCAndKVOVC.h; sourceTree = "<group>"; };
-		04831F401DE8300900CE8892 /* HKVCAndKVOVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKVCAndKVOVC.m; sourceTree = "<group>"; };
 		B4434C561D868B7A0058BB23 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
 		B4434C571D868B7A0058BB23 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
 		B4434C581D868B7A0058BB23 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
@@ -808,20 +795,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		047367341DED374000ADC795 /* ScreenShotBack */ = {
-			isa = PBXGroup;
-			children = (
-				047367351DED374000ADC795 /* BaseNavigationController.h */,
-				047367361DED374000ADC795 /* BaseNavigationController.m */,
-				047367371DED374000ADC795 /* BaseViewController.h */,
-				047367381DED374000ADC795 /* BaseViewController.m */,
-				047367391DED374000ADC795 /* ScreenShotBackConfig.h */,
-				0473673A1DED374000ADC795 /* ScreenShotView.h */,
-				0473673B1DED374000ADC795 /* ScreenShotView.m */,
-			);
-			path = ScreenShotBack;
-			sourceTree = "<group>";
-		};
 		0479E5901DE5330E00245249 /* HYTestVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,8 +810,6 @@
 				0479E59E1DE5333400245249 /* HJSWebView.m */,
 				0479E5A21DE574A500245249 /* HWKWebView.h */,
 				0479E5A31DE574A500245249 /* HWKWebView.m */,
-				04831F3F1DE8300900CE8892 /* HKVCAndKVOVC.h */,
-				04831F401DE8300900CE8892 /* HKVCAndKVOVC.m */,
 			);
 			path = HYTestVC;
 			sourceTree = "<group>";
@@ -1487,7 +1458,6 @@
 		B48BC06C1D4A019700DFC174 /* HCustomVC */ = {
 			isa = PBXGroup;
 			children = (
-				047367341DED374000ADC795 /* ScreenShotBack */,
 				B48BC06E1D4A01C500DFC174 /* HYBaseViewController.h */,
 				B48BC06F1D4A01C500DFC174 /* HYBaseViewController.m */,
 				0479E58D1DE5323D00245249 /* HYBaseWebView.h */,
@@ -1970,7 +1940,6 @@
 				B4C619AA1D619E48003ECF01 /* ChatToolBar.m in Sources */,
 				B49B0D771D4EFB4000410E02 /* NSProcessInfo+BFKit.m in Sources */,
 				B4463A141D3624D8000081DC /* UIImage+GIF.m in Sources */,
-				0473673C1DED374000ADC795 /* BaseNavigationController.m in Sources */,
 				B4463A641D3624D8000081DC /* YYFileHash.m in Sources */,
 				B49B0D761D4EFB4000410E02 /* NSObject+BFKit.m in Sources */,
 				B4C619A51D619E48003ECF01 /* FacePageView.m in Sources */,
@@ -2039,7 +2008,6 @@
 				B4463A2F1D3624D8000081DC /* UIBezierPath+YYAdd.m in Sources */,
 				B4463A181D3624D8000081DC /* UIImageView+WebCache.m in Sources */,
 				0479E59A1DE5330E00245249 /* HOneVC.m in Sources */,
-				0473673D1DED374000ADC795 /* BaseViewController.m in Sources */,
 				B4434C611D868B7A0058BB23 /* GCDSemaphore.m in Sources */,
 				B44460271D6451E300085FE7 /* HYTabBarControllerConfig.m in Sources */,
 				B4463A1D1D3624D8000081DC /* NSArray+YYAdd.m in Sources */,
@@ -2061,7 +2029,6 @@
 				B49B0D791D4EFB4000410E02 /* NSThread+BFKit.m in Sources */,
 				B49B0D8E1D4EFB4000410E02 /* BFCryptor.m in Sources */,
 				B4463A471D3624D8000081DC /* YYImageCache.m in Sources */,
-				04831F411DE8300900CE8892 /* HKVCAndKVOVC.m in Sources */,
 				B44639F91D3624D8000081DC /* AFHTTPRequestOperationManager.m in Sources */,
 				B49B0D8F1D4EFB4000410E02 /* BFDataStructures.m in Sources */,
 				0479E5AB1DE5985E00245249 /* HLAudioPlayer.m in Sources */,
@@ -2129,7 +2096,6 @@
 				B4463A391D3624D8000081DC /* UITextField+YYAdd.m in Sources */,
 				B4463A421D3624D8000081DC /* UIButton+YYWebImage.m in Sources */,
 				B4463A501D3624D8000081DC /* YYTextEffectWindow.m in Sources */,
-				0473673E1DED374000ADC795 /* ScreenShotView.m in Sources */,
 				B47E7ADB1D52D7F700B6FEA5 /* HYThirdVC.m in Sources */,
 				B4463A091D3624D8000081DC /* UIWebView+AFNetworking.m in Sources */,
 				B4463A611D3624D8000081DC /* YYTextView.m in Sources */,

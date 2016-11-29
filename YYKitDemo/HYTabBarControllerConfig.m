@@ -16,7 +16,7 @@
 
 @import Foundation;
 @import UIKit;
-@interface HYBaseNavigationController : BaseNavigationController
+@interface HYBaseNavigationController : UINavigationController
 @end
 @implementation HYBaseNavigationController
 

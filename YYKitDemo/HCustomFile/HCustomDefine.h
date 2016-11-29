@@ -14,5 +14,4 @@
 #define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 
-#define kUseScreenShotGesture  1
 #endif /* HCustomDefine_h */

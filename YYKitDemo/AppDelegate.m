@@ -63,13 +63,6 @@ void UncaughtExceptionHandler(NSException *exception) {
     self.window.frame = [UIScreen mainScreen].bounds;
     HYTabBarControllerConfig *tabBarControllerConfig = [[HYTabBarControllerConfig alloc] init];
     [self.window setRootViewController:tabBarControllerConfig.tabBarController];
-    
-#if kUseScreenShotGesture
-    self.screenshotView = [[ScreenShotView alloc] initWithFrame:CGRectMake(0, 0, self.window.frame.size.width, self.window.frame.size.height)];
-    [self.window insertSubview:self.screenshotView atIndex:0];
-    self.screenshotView.hidden = YES;
-#endif
-    
     [self.window makeKeyAndVisible];
     [self customizeInterface];
     
@@ -191,7 +184,4 @@ void UncaughtExceptionHandler(NSException *exception) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-+ (AppDelegate* )shareAppDelegate {
-    return (AppDelegate*)[UIApplication sharedApplication].delegate;
-}
 @end

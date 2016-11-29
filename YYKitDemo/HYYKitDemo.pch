@@ -16,7 +16,7 @@
 #else
 #define NSLog(FORMAT, ...) nil
 #endif
-#import "AppDelegate.h"
+
 #import "HCustomDefine.h"
 #import "YYCGUtilities.h"
 #import "BFKit.h"
@@ -26,5 +26,4 @@
 //#import "BlocksKit.h"
 #import "UIView+YYAdd.h"
 #import "GCD.h"
-#import "BaseNavigationController.h"
 #endif /* HYYKitDemo_pch */
