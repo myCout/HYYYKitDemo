@@ -23,6 +23,7 @@
 #import "HYTest5VC.h"
 #import "HJSWebView.h"
 #import "HWKWebView.h"
+#import "HKVCAndKVOVC.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -44,6 +45,7 @@
     [_hDataSourceArray addObject:@"KeyboardDemo"];
     [_hDataSourceArray addObject:@"OC_JS交互"];
     [_hDataSourceArray addObject:@"WKWebView_OC_JS交互"];
+    [_hDataSourceArray addObject:@"KVC & KVO"];
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     
 
@@ -149,7 +151,12 @@
             baseVC = [HWKWebView new];
         }
             break;
-            
+        case 7:
+        {
+            baseVC = [HKVCAndKVOVC new];
+        }
+            break;
+         
         default:
             break;
     }

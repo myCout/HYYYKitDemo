@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CYLTabBarController.h"
+#import "ScreenShotView.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -15,6 +16,10 @@
 
 @property (strong, nonatomic) UIViewController *viewController;
 
+@property (nonatomic, strong) ScreenShotView *screenshotView;
+
 //@property (nonatomic, strong) CYLTabBarController *tabBarController;
+/// func
++ (AppDelegate* )shareAppDelegate;
 @end
 
