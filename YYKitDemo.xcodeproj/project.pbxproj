@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0453CFA71DBEF8CF009C5B65 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453CFA61DBEF8CF009C5B65 /* JavaScriptCore.framework */; };
 		0453CFA91DBEF902009C5B65 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0453CFA81DBEF902009C5B65 /* libz.tbd */; };
+		0468C5EF1DF5637E007A37C0 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468C5EE1DF5637E007A37C0 /* UIButton+Block.m */; };
 		0479E58A1DE531B800245249 /* JPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479E5871DE531B800245249 /* JPEngine.m */; };
 		0479E58B1DE531B800245249 /* JSPatch.js in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5881DE531B800245249 /* JSPatch.js */; };
 		0479E58C1DE531B800245249 /* lh.js in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5891DE531B800245249 /* lh.js */; };
@@ -273,6 +274,8 @@
 /* Begin PBXFileReference section */
 		0453CFA61DBEF8CF009C5B65 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		0453CFA81DBEF902009C5B65 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0468C5ED1DF5637E007A37C0 /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
+		0468C5EE1DF5637E007A37C0 /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		0479E5861DE531B800245249 /* JPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPEngine.h; path = JSPathLib/JPEngine.h; sourceTree = "<group>"; };
 		0479E5871DE531B800245249 /* JPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPEngine.m; path = JSPathLib/JPEngine.m; sourceTree = "<group>"; };
 		0479E5881DE531B800245249 /* JSPatch.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = JSPatch.js; path = JSPathLib/JSPatch.js; sourceTree = "<group>"; };
@@ -1442,6 +1445,8 @@
 				B48BC0641D49ABF800DFC174 /* UITableView+CellHeightCache */,
 				B487CED71D51E7E900BDDA61 /* UILabel+FontChange.h */,
 				B487CED81D51E7E900BDDA61 /* UILabel+FontChange.m */,
+				0468C5ED1DF5637E007A37C0 /* UIButton+Block.h */,
+				0468C5EE1DF5637E007A37C0 /* UIButton+Block.m */,
 			);
 			path = HCustomCategory;
 			sourceTree = "<group>";
@@ -1977,6 +1982,7 @@
 				0479E58A1DE531B800245249 /* JPEngine.m in Sources */,
 				B4463A481D3624D8000081DC /* YYImageCoder.m in Sources */,
 				B4463A461D3624D8000081DC /* YYImage.m in Sources */,
+				0468C5EF1DF5637E007A37C0 /* UIButton+Block.m in Sources */,
 				B4463A291D3624D8000081DC /* NSThread+YYAdd.m in Sources */,
 				B4463A5B1D3624D8000081DC /* YYTextAttribute.m in Sources */,
 				B49B0D821D4EFB4000410E02 /* UINavigationBar+BFKit.m in Sources */,

@@ -9,8 +9,9 @@
 #import "HYSecondVC.h"
 #import <objc/runtime.h>
 
+static const void*CallBtnKey = &CallBtnKey;
 
-@interface HYSecondVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface HYSecondVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, retain) UITableView *hTableView;
 @property (nonatomic, retain) NSArray *hDataSourceArray;
 @property (nonatomic, retain) UIView *hTableHeadView;
@@ -38,11 +39,18 @@
 - (void)initUI{
     self.title = @"Runtime学习";
     self.view.backgroundColor = [UIColor whiteColor];
-    _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world"];
-    
-//    [self.hTableHeadView addSubview:self.hDontReClickBtn];
-    
+//    self.navigationController.hidesBarsOnSwipe = YES;
+    _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world",@"动态绑定对象传参:点击拨打 : 10000"];
+    UIImageView *imagV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+    [imagV sd_setImageWithURL:[NSURL URLWithString:@"http://st1.dailyyoga.com/data/6a/bf/6abf1d3bee236eff6341a10f2fff0602.jpeg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        //
+    }];
+    [self.hTableHeadView addSubview:imagV];
+    [self.hDontReClickBtn tapWithEvent:UIControlEventTouchUpInside withBlock:^(UIButton *sender) {
+        //
+    }];
     _hTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _hTableView.height -= 64;
     _hTableView.delegate = self;
     _hTableView.dataSource = self;
     _hTableView.tableHeaderView = self.hTableHeadView;
@@ -80,7 +88,6 @@
     }else{
         cell.textLabel.text = [NSString stringWithFormat:@"%@",_hDataSourceArray[indexPath.row]];
     }
-    
     return cell;
 }
 
@@ -112,6 +119,12 @@
         case 4:
         {
             [self getProtocolList];
+        }
+            break;
+            
+        case 6:
+        {
+            [self callPhone];
         }
             break;
             
@@ -188,6 +201,24 @@
     }
 }
 
+-(void)callPhone
+{
+    NSLog(@"----------拨打电话----------");
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"拨打电话" message:@"10000" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拨打", nil];
+    [alertView show];
+    
+    objc_setAssociatedObject(alertView, CallBtnKey, @"10000", OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
+#pragma mark - alertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex) {
+        NSString *telStr = objc_getAssociatedObject(alertView, CallBtnKey);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",telStr]]];
+    }
+}
 -(void)hDontReClickBtnClicked
 {
     NSLog(@"----------按钮禁止重复点击----------");

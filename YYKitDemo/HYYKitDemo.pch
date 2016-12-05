@@ -26,4 +26,6 @@
 //#import "BlocksKit.h"
 #import "UIView+YYAdd.h"
 #import "GCD.h"
+#import "UIButton+Block.h"
+
 #endif /* HYYKitDemo_pch */
