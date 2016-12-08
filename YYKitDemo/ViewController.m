@@ -23,6 +23,9 @@
 #import "HYTest5VC.h"
 #import "HJSWebView.h"
 #import "HWKWebView.h"
+#import "HCADisplayLinkCAShapeLayerVC.h"
+#import "HBulletVC.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -37,13 +40,15 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
 //    _hDataSourceArray = @[@"下拉放大，上推缩小"];
     _hDataSourceArray = [NSMutableArray new];
-    [_hDataSourceArray addObject:@"展示Cell"];
-    [_hDataSourceArray addObject:@"Runtime学习"];
-    [_hDataSourceArray addObject:@"EmailTextField"];
-    [_hDataSourceArray addObject:@"UICollectionView学习"];
-    [_hDataSourceArray addObject:@"KeyboardDemo"];
-    [_hDataSourceArray addObject:@"OC_JS交互"];
-    [_hDataSourceArray addObject:@"WKWebView_OC_JS交互"];
+    [_hDataSourceArray addObject:@"展示Cell"];//0
+    [_hDataSourceArray addObject:@"Runtime学习"];//
+    [_hDataSourceArray addObject:@"EmailTextField"];//
+    [_hDataSourceArray addObject:@"UICollectionView学习"];//
+    [_hDataSourceArray addObject:@"KeyboardDemo"];//
+    [_hDataSourceArray addObject:@"OC_JS交互"];//
+    [_hDataSourceArray addObject:@"WKWebView_OC_JS交互"];//6
+    [_hDataSourceArray addObject:@"动画黄金搭档:CADisplayLink & CAShapeLayer"];//7
+    [_hDataSourceArray addObject:@"弹幕"];//8HBulletVC
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     
 
@@ -149,7 +154,17 @@
             baseVC = [HWKWebView new];
         }
             break;
-            
+        case 7:
+        {
+            baseVC = [HCADisplayLinkCAShapeLayerVC new];
+        }
+            break;
+        case 8:
+        {
+            baseVC = [HBulletVC new];
+        }
+            break;
+           
         default:
             break;
     }

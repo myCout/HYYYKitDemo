@@ -131,7 +131,7 @@
  *
  *  @return Returns the UIColor instance
  */
-+ (UIColor * _Nonnull)colorWithHexString:(NSString * _Nonnull)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
+//+ (UIColor * _Nonnull)colorWithHexString:(NSString * _Nonnull)hexString DEPRECATED_MSG_ATTRIBUTE("Use +hex");
 
 /**
  *  Create a color from HEX

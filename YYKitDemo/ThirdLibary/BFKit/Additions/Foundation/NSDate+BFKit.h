@@ -86,7 +86,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @return Returns the month
  */
-+ (NSDate * _Nonnull)month;
+//+ (NSDate * _Nonnull)month;
 
 /**
  *  Get the month from self
@@ -164,7 +164,7 @@ typedef struct BFDateInformation BFDateInformation;
  *
  *  @return Returns self by adding the gived days number
  */
-- (NSDate * _Nonnull)dateByAddingDays:(NSUInteger)days;
+//- (NSDate * _Nonnull)dateByAddingDays:(NSUInteger)days;
 
 /**
  *  Create an NSDate with other two NSDate objects.

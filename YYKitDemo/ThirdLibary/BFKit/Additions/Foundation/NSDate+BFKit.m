@@ -35,9 +35,9 @@
 	return [self dateFromDateInformation:inf];
 }
 
-+ (NSDate * _Nonnull)month {
-    return [[NSDate date] month];
-}
+//+ (NSDate * _Nonnull)month {
+//    return [[NSDate date] month];
+//}
 
 - (NSDate * _Nonnull)month {
 	NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
@@ -122,9 +122,9 @@
 	return [self isSameDay:[NSDate date]];
 }
 
-- (NSDate * _Nonnull)dateByAddingDays:(NSUInteger)days  {
-    return [self dateByAddingTimeInterval:days * 24 * 60 * 60];
-}
+//- (NSDate * _Nonnull)dateByAddingDays:(NSUInteger)days  {
+//    return [self dateByAddingTimeInterval:days * 24 * 60 * 60];
+//}
 
 + (NSDate * _Nonnull)dateWithDatePart:(NSDate *)aDate andTimePart:(NSDate *)aTime {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

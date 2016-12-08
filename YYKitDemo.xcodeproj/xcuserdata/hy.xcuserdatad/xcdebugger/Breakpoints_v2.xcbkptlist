@@ -20,12 +20,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YYKitDemo/HCustomVC/HYSecondVC/HYSecondVC.m"
-            timestampString = "502617173.824384"
+            timestampString = "502690941.788492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-initUI"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YYKitDemo/HCustomVC/&#x5f39;&#x5e55;/HBulletView.m"
+            timestampString = "502863847.197452"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-startAnimation"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HBulletView startAnimation]"
+                  moduleName = "YYKitDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hy/Documents/HaoYi_IOSDemo/HYYYKitDemo/YYKitDemo/HCustomVC/%E5%BC%B9%E5%B9%95/HBulletView.m"
+                  timestampString = "502868571.000281"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[HBulletView startAnimation]_block_invoke"
+                  moduleName = "YYKitDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hy/Documents/HaoYi_IOSDemo/HYYYKitDemo/YYKitDemo/HCustomVC/%E5%BC%B9%E5%B9%95/HBulletView.m"
+                  timestampString = "502868571.002078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YYKitDemo/HCustomVC/&#x5f39;&#x5e55;/HBulletView.m"
+            timestampString = "502868734.343298"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-startAnimation"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

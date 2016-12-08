@@ -333,7 +333,7 @@
  *
  *  @return Returns the created UIImage
  */
-+ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color;
+//+ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color;
 
 /**
  *  Create an image from a given text

@@ -67,9 +67,9 @@
     return [UIColor hex:hexString];
 }
 
-+ (UIColor * _Nonnull)colorWithHexString:(NSString *)hexString {
-    return [UIColor hex:hexString];
-}
+//+ (UIColor * _Nonnull)colorWithHexString:(NSString *)hexString {
+//    return [UIColor hex:hexString];
+//}
 
 + (CGFloat)colorComponentFrom:(NSString * _Nonnull)string start:(NSUInteger)start length:(NSUInteger)length {
     NSString *substring = [string substringWithRange:NSMakeRange(start, length)];

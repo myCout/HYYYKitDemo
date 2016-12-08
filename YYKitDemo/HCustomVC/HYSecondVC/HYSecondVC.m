@@ -8,7 +8,7 @@
 
 #import "HYSecondVC.h"
 #import <objc/runtime.h>
-
+#import <objc/message.h>
 static const void*CallBtnKey = &CallBtnKey;
 
 @interface HYSecondVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
@@ -29,6 +29,22 @@ static const void*CallBtnKey = &CallBtnKey;
 @end
 
 @implementation HYSecondVC
+
++(void)load{
+    Method method1 = class_getClassMethod(self, @selector(fun1));
+    Method method2 = class_getClassMethod(self, @selector(fun2));
+    
+    method_exchangeImplementations(method1, method2);
+}
+
+- (void)fun1{
+    NSLog(@"我是 fun1");
+}
+
+- (void)fun2{
+    NSLog(@"我是 fun2");
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,6 +72,14 @@ static const void*CallBtnKey = &CallBtnKey;
     _hTableView.tableHeaderView = self.hTableHeadView;
     _hTableView.tableFooterView = [UIView new];
     [self.view addSubview:_hTableView];
+    
+    
+//    1、动态绑定传参；
+//    2、UIButton的一个category ，用block代替点击事件；
+//    3、看不到源代码，可以给类添加get和set方法，同时添加N个属性
+//    4、obj 消息机制 objc_msgSend(self,@selector(setBackground:),[UIColor brownColor])
+//    5、exchangeImp
+    
     
 //    @"解决UIButton多次点击(重复点击)",
 }
