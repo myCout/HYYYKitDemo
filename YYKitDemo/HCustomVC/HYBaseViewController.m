@@ -11,7 +11,7 @@
 @implementation HYBaseViewController
 - (void) viewDidLoad{
     self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     NSLog(@"viewDidLoad: %@",[self class]);
 //    NSLog(@"parentViewController%@",self.parentViewController.class);
 }

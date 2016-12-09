@@ -7,7 +7,7 @@
 //
 
 #import "HYBaseViewController.h"
-
-@interface HThreeVC : HYBaseViewController
+#import "YZDisplayViewController.h"
+@interface HThreeVC : YZDisplayViewController
 
 @end

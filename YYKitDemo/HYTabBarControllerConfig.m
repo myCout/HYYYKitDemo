@@ -60,6 +60,7 @@
                                                     initWithRootViewController:secondViewController];
     
     HThreeVC *thirdViewController = [[HThreeVC alloc] init];
+    thirdViewController.fd_prefersNavigationBarHidden = YES;
     UIViewController *thirdNavigationController = [[HYBaseNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
     

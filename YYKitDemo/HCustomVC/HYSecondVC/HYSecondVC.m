@@ -7,6 +7,7 @@
 //
 
 #import "HYSecondVC.h"
+#import "UIScrollView+HeaderScaleImage.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 static const void*CallBtnKey = &CallBtnKey;
@@ -57,11 +58,10 @@ static const void*CallBtnKey = &CallBtnKey;
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationController.hidesBarsOnSwipe = YES;
     _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world",@"动态绑定对象传参:点击拨打 : 10000"];
-    UIImageView *imagV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
-    [imagV sd_setImageWithURL:[NSURL URLWithString:@"http://st1.dailyyoga.com/data/6a/bf/6abf1d3bee236eff6341a10f2fff0602.jpeg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        //
-    }];
-    [self.hTableHeadView addSubview:imagV];
+    
+    
+    // 设置tableView头部视图，必须设置头部视图背景颜色为clearColor,否则会被挡住
+
     [self.hDontReClickBtn tapWithEvent:UIControlEventTouchUpInside withBlock:^(UIButton *sender) {
         //
     }];
@@ -72,8 +72,14 @@ static const void*CallBtnKey = &CallBtnKey;
     _hTableView.tableHeaderView = self.hTableHeadView;
     _hTableView.tableFooterView = [UIView new];
     [self.view addSubview:_hTableView];
-    
-    
+//    WS(weakSelf)
+//    UIImageView *imagV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+//    [imagV sd_setImageWithURL:[NSURL URLWithString:@"http://st1.dailyyoga.com/data/6a/bf/6abf1d3bee236eff6341a10f2fff0602.jpeg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        
+//    }];
+    // 设置tableView头部缩放图片
+    self.hTableView.yz_headerScaleImage = [UIImage imageNamed:@"10"];
+//    [self.hTableHeadView addSubview:imagV];
 //    1、动态绑定传参；
 //    2、UIButton的一个category ，用block代替点击事件；
 //    3、看不到源代码，可以给类添加get和set方法，同时添加N个属性
@@ -263,7 +269,7 @@ static const void*CallBtnKey = &CallBtnKey;
 - (UIView*)hTableHeadView{
     if (!_hTableHeadView) {
         _hTableHeadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
-        _hTableHeadView.backgroundColor = [UIColor grayColor];
+        _hTableHeadView.backgroundColor = [UIColor clearColor];
     }
     return _hTableHeadView;
 }

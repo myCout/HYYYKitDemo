@@ -25,6 +25,12 @@
 		0479E5A61DE594B100245249 /* index2.html in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5A51DE594B100245249 /* index2.html */; };
 		0479E5A81DE5984700245249 /* shake_sound_male.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0479E5A71DE5984700245249 /* shake_sound_male.wav */; };
 		0479E5AB1DE5985E00245249 /* HLAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0479E5AA1DE5985E00245249 /* HLAudioPlayer.m */; };
+		047B45541DFA816D003847FC /* UIScrollView+HeaderScaleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B45531DFA816D003847FC /* UIScrollView+HeaderScaleImage.m */; };
+		047B457E1DFA88B9003847FC /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B45761DFA88B9003847FC /* UIView+Frame.m */; };
+		047B457F1DFA88B9003847FC /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B45781DFA88B9003847FC /* YZDisplayTitleLabel.m */; };
+		047B45801DFA88B9003847FC /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B457A1DFA88B9003847FC /* YZDisplayViewController.m */; };
+		047B45811DFA88B9003847FC /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B457D1DFA88B9003847FC /* YZFlowLayout.m */; };
+		047B45841DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B45831DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.m */; };
 		04A53F4E1DF7D9130011BF56 /* HBulletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A53F4D1DF7D9130011BF56 /* HBulletVC.m */; };
 		04A53F511DF7DA190011BF56 /* HBulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A53F501DF7DA190011BF56 /* HBulletView.m */; };
 		04A53F541DF7DA350011BF56 /* HBulletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A53F531DF7DA350011BF56 /* HBulletManager.m */; };
@@ -510,6 +516,19 @@
 		0479E5A71DE5984700245249 /* shake_sound_male.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shake_sound_male.wav; sourceTree = "<group>"; };
 		0479E5A91DE5985E00245249 /* HLAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAudioPlayer.h; sourceTree = "<group>"; };
 		0479E5AA1DE5985E00245249 /* HLAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAudioPlayer.m; sourceTree = "<group>"; };
+		047B45521DFA816D003847FC /* UIScrollView+HeaderScaleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HeaderScaleImage.h"; sourceTree = "<group>"; };
+		047B45531DFA816D003847FC /* UIScrollView+HeaderScaleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HeaderScaleImage.m"; sourceTree = "<group>"; };
+		047B45751DFA88B9003847FC /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		047B45761DFA88B9003847FC /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		047B45771DFA88B9003847FC /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
+		047B45781DFA88B9003847FC /* YZDisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayTitleLabel.m; sourceTree = "<group>"; };
+		047B45791DFA88B9003847FC /* YZDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewController.h; sourceTree = "<group>"; };
+		047B457A1DFA88B9003847FC /* YZDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayViewController.m; sourceTree = "<group>"; };
+		047B457B1DFA88B9003847FC /* YZDisplayViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewHeader.h; sourceTree = "<group>"; };
+		047B457C1DFA88B9003847FC /* YZFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFlowLayout.h; sourceTree = "<group>"; };
+		047B457D1DFA88B9003847FC /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
+		047B45821DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		047B45831DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		04A53F4C1DF7D9130011BF56 /* HBulletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBulletVC.h; sourceTree = "<group>"; };
 		04A53F4D1DF7D9130011BF56 /* HBulletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBulletVC.m; sourceTree = "<group>"; };
 		04A53F4F1DF7DA190011BF56 /* HBulletView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBulletView.h; sourceTree = "<group>"; };
@@ -1458,6 +1477,22 @@
 				0479E5A31DE574A500245249 /* HWKWebView.m */,
 			);
 			path = HYTestVC;
+			sourceTree = "<group>";
+		};
+		047B45741DFA88B9003847FC /* YZDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				047B45751DFA88B9003847FC /* UIView+Frame.h */,
+				047B45761DFA88B9003847FC /* UIView+Frame.m */,
+				047B45771DFA88B9003847FC /* YZDisplayTitleLabel.h */,
+				047B45781DFA88B9003847FC /* YZDisplayTitleLabel.m */,
+				047B45791DFA88B9003847FC /* YZDisplayViewController.h */,
+				047B457A1DFA88B9003847FC /* YZDisplayViewController.m */,
+				047B457B1DFA88B9003847FC /* YZDisplayViewHeader.h */,
+				047B457C1DFA88B9003847FC /* YZFlowLayout.h */,
+				047B457D1DFA88B9003847FC /* YZFlowLayout.m */,
+			);
+			path = YZDisplayViewController;
 			sourceTree = "<group>";
 		};
 		04A53F4B1DF7D8F60011BF56 /* 弹幕 */ = {
@@ -2559,6 +2594,7 @@
 				0479E5871DE531B800245249 /* JPEngine.m */,
 				0479E5881DE531B800245249 /* JSPatch.js */,
 				0479E5891DE531B800245249 /* lh.js */,
+				047B45741DFA88B9003847FC /* YZDisplayViewController */,
 				04A53F551DF7FAAA0011BF56 /* JKCategories */,
 				B4434C551D868B7A0058BB23 /* GCDobject */,
 				B44460171D644E5E00085FE7 /* CYLTabBarController */,
@@ -3067,11 +3103,15 @@
 		B48BC0631D49ABF800DFC174 /* HCustomCategory */ = {
 			isa = PBXGroup;
 			children = (
+				047B45521DFA816D003847FC /* UIScrollView+HeaderScaleImage.h */,
+				047B45531DFA816D003847FC /* UIScrollView+HeaderScaleImage.m */,
 				B48BC0641D49ABF800DFC174 /* UITableView+CellHeightCache */,
 				B487CED71D51E7E900BDDA61 /* UILabel+FontChange.h */,
 				B487CED81D51E7E900BDDA61 /* UILabel+FontChange.m */,
 				0468C5ED1DF5637E007A37C0 /* UIButton+Block.h */,
 				0468C5EE1DF5637E007A37C0 /* UIButton+Block.m */,
+				047B45821DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.h */,
+				047B45831DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.m */,
 			);
 			path = HCustomCategory;
 			sourceTree = "<group>";
@@ -3599,6 +3639,7 @@
 				04A541891DF7FAAA0011BF56 /* NSTimer+JKBlocks.m in Sources */,
 				B4463A6B1D3624D8000081DC /* YYTimer.m in Sources */,
 				04A541EB1DF7FAAB0011BF56 /* UITextView+JKPlaceHolder.m in Sources */,
+				047B45801DFA88B9003847FC /* YZDisplayViewController.m in Sources */,
 				B49B0D911D4EFB4000410E02 /* BFPassword.m in Sources */,
 				B4463A671D3624D8000081DC /* YYReachability.m in Sources */,
 				B4463A631D3624D8000081DC /* YYDispatchQueuePool.m in Sources */,
@@ -3701,9 +3742,11 @@
 				B44639FF1D3624D8000081DC /* AFURLRequestSerialization.m in Sources */,
 				04A541B71DF7FAAB0011BF56 /* UIFont+JKCustomLoader.m in Sources */,
 				04A541411DF7FAAA0011BF56 /* NSManagedObjectContext+JKObjectClear.m in Sources */,
+				047B457E1DFA88B9003847FC /* UIView+Frame.m in Sources */,
 				04A542071DF7FAAB0011BF56 /* UIWindow+JKHierarchy.m in Sources */,
 				04A53F4E1DF7D9130011BF56 /* HBulletVC.m in Sources */,
 				B4463A4C1D3624D8000081DC /* NSObject+YYModel.m in Sources */,
+				047B45811DFA88B9003847FC /* YZFlowLayout.m in Sources */,
 				04A541931DF7FAAA0011BF56 /* MKMapView+JKZoomLevel.m in Sources */,
 				04A541581DF7FAAA0011BF56 /* NSDictionary+JKSafeAccess.m in Sources */,
 				B4463A601D3624D8000081DC /* YYLabel.m in Sources */,
@@ -3733,6 +3776,7 @@
 				04A5414F1DF7FAAA0011BF56 /* NSDate+JKExtension.m in Sources */,
 				B4463A431D3624D8000081DC /* UIImageView+YYWebImage.m in Sources */,
 				04A541B81DF7FAAB0011BF56 /* UIFont+JKDynamicFontControl.m in Sources */,
+				047B45841DFA8E42003847FC /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				04A541CD1DF7FAAB0011BF56 /* UIImageView+JKGeometryConversion.m in Sources */,
 				04A541451DF7FAAA0011BF56 /* NSBundle+JKAppIcon.m in Sources */,
 				04A541591DF7FAAA0011BF56 /* NSDictionary+JKURL.m in Sources */,
@@ -3778,6 +3822,7 @@
 				04A541521DF7FAAA0011BF56 /* NSDate+JKReporting.m in Sources */,
 				04A5413B1DF7FAAA0011BF56 /* NSFetchRequest+JKExtensions.m in Sources */,
 				04A542051DF7FAAB0011BF56 /* UIWebView+JKStyle.m in Sources */,
+				047B457F1DFA88B9003847FC /* YZDisplayTitleLabel.m in Sources */,
 				B4463A711D36252D000081DC /* HYNetworkManager.m in Sources */,
 				04A5417C1DF7FAAA0011BF56 /* NSString+JKMatcher.m in Sources */,
 				B4463A4E1D3624D8000081DC /* YYTextContainerView.m in Sources */,
@@ -3801,6 +3846,7 @@
 				B49B0D871D4EFB4000410E02 /* UITextView+BFKit.m in Sources */,
 				B4463A491D3624D8000081DC /* YYSpriteSheetImage.m in Sources */,
 				04A5417D1DF7FAAA0011BF56 /* NSString+JKMIME.m in Sources */,
+				047B45541DFA816D003847FC /* UIScrollView+HeaderScaleImage.m in Sources */,
 				B47D36731D5C5782007AE976 /* HTableCollectionViewCell.m in Sources */,
 				04A541541DF7FAAA0011BF56 /* NSDateFormatter+JKMake.m in Sources */,
 				04A541691DF7FAAA0011BF56 /* NSObject+JKAppInfo.m in Sources */,

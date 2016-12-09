@@ -16,7 +16,7 @@
 #else
 #define NSLog(FORMAT, ...) nil
 #endif
-
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #import "HCustomDefine.h"
 #import "YYCGUtilities.h"
 #import "BFKit.h"
