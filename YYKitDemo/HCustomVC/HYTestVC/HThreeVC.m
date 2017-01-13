@@ -67,17 +67,17 @@
     
     // 段子
     ViewController *wordVc1 = [[ViewController alloc] init];
-    wordVc1.title = @"小码哥吖了个峥吖了个峥吖了个峥";
+    wordVc1.title = @"Allewsd";
     [self addChildViewController:wordVc1];
     
     // 段子
     ViewController *wordVc2 = [[ViewController alloc] init];
-    wordVc2.title = @"M了个J吖了个峥吖了个峥";
+    wordVc2.title = @"Angesagt";
     [self addChildViewController:wordVc2];
     
     // 段子
     ViewController *wordVc3 = [[ViewController alloc] init];
-    wordVc3.title = @"啊峥吖了个峥";
+    wordVc3.title = @"Freunde";
     [self addChildViewController:wordVc3];
     
 //    ViewController *wordVc4 = [[ViewController alloc] init];

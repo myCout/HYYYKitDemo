@@ -604,7 +604,7 @@ static NSString * const ID = @"CONTENTCELL";
         UILabel *label = [[YZDisplayTitleLabel alloc] init];
         
         label.tag = i;
-        
+        label.backgroundColor = [UIColor randomColor];
         // 设置按钮的文字颜色
         label.textColor = self.norColor;
         

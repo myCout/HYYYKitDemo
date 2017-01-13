@@ -29,4 +29,5 @@
 #import "UIButton+Block.h"
 #import "YYKit.h"
 #import "JKCategories.h"
+#import "NSObject+Swizzling.h"
 #endif /* HYYKitDemo_pch */

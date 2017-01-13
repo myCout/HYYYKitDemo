@@ -57,7 +57,7 @@ static const void*CallBtnKey = &CallBtnKey;
     self.title = @"Runtime学习";
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationController.hidesBarsOnSwipe = YES;
-    _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world",@"动态绑定对象传参:点击拨打 : 10000"];
+    _hDataSourceArray = @[@"获取属性列表",@"获取变量列表",@"获取实例方法列表",@"获取类方法列表",@"获取协议列表",@"我是动态修改字体 hello world",@"动态绑定对象传参:点击拨打 : 10000",@"替换ViewController生命周期方法",@"解决获取索引、添加、删除元素越界崩溃问题",@"防止按钮重复暴力点击",@"全局修改导航栏后退（返回）按钮"];
     
     
     // 设置tableView头部视图，必须设置头部视图背景颜色为clearColor,否则会被挡住
@@ -66,7 +66,7 @@ static const void*CallBtnKey = &CallBtnKey;
         //
     }];
     _hTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    _hTableView.height -= 64;
+//    _hTableView.height -= 64;
     _hTableView.delegate = self;
     _hTableView.dataSource = self;
     _hTableView.tableHeaderView = self.hTableHeadView;
@@ -157,7 +157,25 @@ static const void*CallBtnKey = &CallBtnKey;
             [self callPhone];
         }
             break;
-            
+        case 7:
+        {
+            NSLog(@"UIViewController (Swizzling)");
+        }
+        break;
+        
+        case 8:
+        {
+            NSLog(@"NSMutableArray+Swizzling");
+            NSMutableArray * arr = [NSMutableArray arrayWithObject:@"0"];
+            [arr removeObjectAtIndex:2];
+            NSLog(@"NSMutableArray+Swizzling = %@",arr);
+        }
+        break;
+        case 9:
+        {
+            NSLog(@"UIViewController (Swizzling)");
+        }
+        break;
         default:
             break;
     }
@@ -236,8 +254,19 @@ static const void*CallBtnKey = &CallBtnKey;
     NSLog(@"----------拨打电话----------");
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"拨打电话" message:@"10000" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拨打", nil];
     [alertView show];
+    //#import <objc/runtime.h>头文件
+    //objc_setAssociatedObject需要四个参数：源对象，关键字，关联的对象和一个关联策略。
     
+    //1 源对象alert
+    //2 关键字 唯一静态变量CallBtnKey
+    //3 关联的对象 @"10000"
+    //4 关键策略  OBJC_ASSOCIATION_RETAIN_NONATOMIC
     objc_setAssociatedObject(alertView, CallBtnKey, @"10000", OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+//    objc_setAssociatedObject(alertView, @"msgstr", message,OBJC_ASSOCIATION_ASSIGN);
+//    //把alert和message字符串关联起来，作为alertview的一部分，关键词就是msgstr，之后可以使用objc_getAssociatedObject从alertview中获取到所关联的对象，便可以访问message或者btn了
+//    //    即实现了关联传值
+//    objc_setAssociatedObject(alertView, @"btn property",sender,OBJC_ASSOCIATION_ASSIGN);
 }
 
 

@@ -52,10 +52,12 @@
 
 - (NSArray *)viewControllers {
     ViewController *firstViewController = [[ViewController alloc] init];
+//    firstViewController.fd_prefersNavigationBarHidden = YES;
     UIViewController *firstNavigationController = [[HYBaseNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     
     HTwoVC *secondViewController = [[HTwoVC alloc] init];
+//    secondViewController.fd_prefersNavigationBarHidden = YES;
     UIViewController *secondNavigationController = [[HYBaseNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     
@@ -65,9 +67,9 @@
                                                    initWithRootViewController:thirdViewController];
     
     HFourVC *fourthViewController = [[HFourVC alloc] init];
+//    fourthViewController.fd_prefersNavigationBarHidden = YES;
     UIViewController *fourthNavigationController = [[HYBaseNavigationController alloc]
                                                     initWithRootViewController:fourthViewController];
-    
     /**
      * 以下两行代码目的在于手动设置让TabBarItem只显示图标，不显示文字，并让图标垂直居中。
      * 等效于在 `-tabBarItemsAttributesForController` 方法中不传 `CYLTabBarItemTitle` 字段。
