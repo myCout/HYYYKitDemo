@@ -30,4 +30,9 @@
 #import "YYKit.h"
 #import "JKCategories.h"
 #import "NSObject+Swizzling.h"
+#import "NSObject+DSSimpleKVO.h"
+#import "SDAutoLayout.h"
+#import "FBKVOController.h"
+#import "NSObject+FBKVOController.h"
+
 #endif /* HYYKitDemo_pch */

@@ -10,6 +10,7 @@
 #import "UIScrollView+HeaderScaleImage.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+
 static const void*CallBtnKey = &CallBtnKey;
 
 @interface HYSecondVC ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
@@ -176,6 +177,12 @@ static const void*CallBtnKey = &CallBtnKey;
             NSLog(@"UIViewController (Swizzling)");
         }
         break;
+            
+        case 11:
+        {
+//
+        }
+            break;
         default:
             break;
     }

@@ -42,7 +42,7 @@
 - (void)safeInsertObject:(id)anObject atIndex:(NSUInteger)index {
     if (anObject == nil) {
         NSLog(@"%s can't insert nil into NSMutableArray", __FUNCTION__);
-    } else if (index > self.count - 1) {
+    } else if (index > self.count) {
         NSLog(@"%s index is invalid", __FUNCTION__);
     } else {
         [self safeInsertObject:anObject atIndex:index];

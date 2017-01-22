@@ -25,7 +25,8 @@
 #import "HWKWebView.h"
 #import "HCADisplayLinkCAShapeLayerVC.h"
 #import "HBulletVC.h"
-
+#import "KVOController.h"
+#import "HUIBezierPathController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -37,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
 //    _hDataSourceArray = @[@"下拉放大，上推缩小"];
     _hDataSourceArray = [NSMutableArray new];
     [_hDataSourceArray addObject:@"展示Cell"];//0
@@ -49,6 +50,8 @@
     [_hDataSourceArray addObject:@"WKWebView_OC_JS交互"];//6
     [_hDataSourceArray addObject:@"动画黄金搭档:CADisplayLink & CAShapeLayer"];//7
     [_hDataSourceArray addObject:@"弹幕"];//8HBulletVC
+    [_hDataSourceArray addObject:@"FBKVO"];//9
+    [_hDataSourceArray addObject:@"UIBezierPath详解"];//10
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     
 
@@ -79,11 +82,25 @@
 }
 
 - (void)initTableView{
-    _hTestTb = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _hTestTb = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-49-64)];
     _hTestTb.delegate = self;
     _hTestTb.dataSource = self;
     _hTestTb.tableFooterView = [UIView new];
     [self.view addSubview:_hTestTb];
+    //添加监听者
+    [_hTestTb addObserver: self forKeyPath: @"contentOffset" options: NSKeyValueObservingOptionNew context: nil];
+
+}
+
+/**
+ *  监听属性值发生改变时回调
+ */
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    CGFloat offset = _hTestTb.contentOffset.y;
+    CGFloat delta = offset / 64.f + 1.f;
+    delta = MAX(0, delta);
+    self.navigationController.navigationBar.alpha = MIN(1, delta);
 }
 
 #pragma mark - UITableView Datasource
@@ -165,6 +182,17 @@
         }
             break;
            
+        case 9:
+        {
+            baseVC = [KVOController new];
+        }
+            break;
+        case 10:
+        {
+            baseVC = [HUIBezierPathController new];
+        }
+            break;
+            
         default:
             break;
     }

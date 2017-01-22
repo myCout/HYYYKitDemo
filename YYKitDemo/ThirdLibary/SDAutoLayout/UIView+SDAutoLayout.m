@@ -955,14 +955,14 @@
     return [self sd_layout];
 }
 
-- (BOOL)sd_isClosingAotuLayout
+- (BOOL)sd_isClosingAutoLayout
 {
-    return self.sd_categoryManager.sd_isClosingAotuLayout;
+    return self.sd_categoryManager.sd_isClosingAutoLayout;
 }
 
-- (void)setSd_closeAotuLayout:(BOOL)sd_closeAotuLayout
+- (void)setSd_closeAutoLayout:(BOOL)sd_closeAutoLayout
 {
-    self.sd_categoryManager.sd_closeAotuLayout = sd_closeAotuLayout;
+    self.sd_categoryManager.sd_closeAutoLayout = sd_closeAutoLayout;
 }
 
 - (void)removeFromSuperviewAndClearAutoLayoutSettings
@@ -1201,7 +1201,7 @@
 {
     UIView *view = model.needsAutoResizeView;
     
-    if (!view || view.sd_isClosingAotuLayout) return;
+    if (!view || view.sd_isClosingAutoLayout) return;
     
     if (view.sd_maxWidth && (model.rightSpaceToView || model.rightEqualToView)) { // 靠右布局前提设置
         [self layoutAutoWidthWidthView:view model:model];
@@ -1301,7 +1301,10 @@
         label.numberOfLines = 1;
         if (label.text.length) {
             if (!label.isAttributedContent) {
-                CGRect rect = [label.text boundingRectWithSize:CGSizeMake(width, label.height_sd) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : label.font} context:nil];
+                CGRect rect = [label.text boundingRectWithSize:CGSizeMake(MAXFLOAT, label.height_sd) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : label.font} context:nil];
+                if (rect.size.width > width) {
+                    rect.size.width = width;
+                }
                 label.width_sd = rect.size.width + 0.1;
             } else{
                 [label sizeToFit];

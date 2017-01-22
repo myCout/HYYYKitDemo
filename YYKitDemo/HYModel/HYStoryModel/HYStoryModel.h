@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HYStoryModel : NSObject
+
++ (instancetype)sharedInstance;
 @property (nonatomic)NSUInteger gaPrefix;
 @property (strong,nonatomic)NSString *title;
 @property (strong,nonatomic)NSArray *images;

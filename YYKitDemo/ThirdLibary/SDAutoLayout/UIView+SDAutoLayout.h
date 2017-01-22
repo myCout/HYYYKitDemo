@@ -47,8 +47,8 @@
  
  
  SDAutoLayout
- 版本：2.1.3
- 发布：2016.07.06
+ 版本：2.1.7
+ 发布：2016.08.12
  
  */
 
@@ -288,7 +288,7 @@ typedef void (^SpaceToSuperView)(UIEdgeInsets insets);
 - (SDAutoLayoutModel *)sd_resetNewLayout;
 
 /** 是否关闭自动布局  */
-@property (nonatomic, getter = sd_isClosingAotuLayout) BOOL sd_closeAotuLayout;
+@property (nonatomic, getter = sd_isClosingAutoLayout) BOOL sd_closeAutoLayout;
 
 /** 从父view移除并清空约束  */
 - (void)removeFromSuperviewAndClearAutoLayoutSettings;
@@ -455,7 +455,7 @@ typedef void (^SpaceToSuperView)(UIEdgeInsets insets);
 
 @property (nonatomic) BOOL shouldReadjustFrameBeforeStoreCache;
 
-@property (nonatomic, assign, getter = sd_isClosingAotuLayout) BOOL sd_closeAotuLayout;
+@property (nonatomic, assign, getter = sd_isClosingAutoLayout) BOOL sd_closeAutoLayout;
 
 
 /** 设置类似collectionView效果的固定间距自动宽度浮动子view */
