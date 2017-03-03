@@ -8,6 +8,7 @@
 
 #import "HUIBezierPathController.h"
 #import "DrawingBoard.h"
+#import "HDownLoadView.h"
 
 @interface HUIBezierPathController ()
 
@@ -42,7 +43,13 @@
     .widthIs(self.view.width-20*2)
     .heightIs(300);
     
-
+    HDownLoadView *downLoadV = [HDownLoadView new];
+    [self.view addSubview:downLoadV];
+    
+    downLoadV.sd_layout.leftSpaceToView(self.view,20)
+    .topSpaceToView(darwView,20)
+    .widthIs(200)
+    .heightIs(200);
 }
 
 

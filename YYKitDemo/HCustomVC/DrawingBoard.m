@@ -41,6 +41,12 @@
 #define PNWeiboColor    [UIColor colorWithRed:250.0 / 255.0 green:0.0 / 255.0 blue:33.0 / 255.0 alpha:1.0]
 #define PNiOSGreenColor [UIColor colorWithRed:98.0 / 255.0 green:247.0 / 255.0 blue:77.0 / 255.0 alpha:1.0]
 
+@interface DrawingBoard ()
+
+
+
+@end
+
 @implementation DrawingBoard
 
 
@@ -135,6 +141,9 @@
     threePath.lineJoinStyle = kCGLineJoinRound;
     [brushColor set];
     [threePath stroke];
+    
+    
+ 
 }
 
 - (UIBezierPath *)bezierPathWithCGPath {
@@ -167,6 +176,5 @@
     
     return framePath;
 }
-
 
 @end

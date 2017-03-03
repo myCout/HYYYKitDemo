@@ -1479,7 +1479,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     frame.offsetX = _offsetX;
     frame.offsetY = _offsetY;
     frame.duration = _duration;
-    frame.dispose = _dispose;
+    frame.yyDispose = _yyDispose;
     frame.blend = _blend;
     frame.image = _image.copy;
     return frame;
@@ -1666,7 +1666,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
                 CFRelease(unblendedImage);
             }
             imageRef = CGBitmapContextCreateImage(_blendCanvas);
-            if (frame.dispose == YYImageDisposeBackground) {
+            if (frame.yyDispose == YYImageDisposeBackground) {
                 CGContextClearRect(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height));
             }
             _blendFrameIndex = index;
@@ -1694,7 +1694,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         frame.height = _height;
         frame.offsetX = 0;
         frame.offsetY = 0;
-        frame.dispose = YYImageDisposeNone;
+        frame.yyDispose = YYImageDisposeNone;
         frame.blend = YYImageBlendNone;
     }
     return frame;
@@ -1892,13 +1892,13 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         
         switch (fi->frame_control.dispose_op) {
             case YY_PNG_DISPOSE_OP_BACKGROUND: {
-                frame.dispose = YYImageDisposeBackground;
+                frame.yyDispose = YYImageDisposeBackground;
             } break;
             case YY_PNG_DISPOSE_OP_PREVIOUS: {
-                frame.dispose = YYImageDisposePrevious;
+                frame.yyDispose = YYImageDisposePrevious;
             } break;
             default: {
-                frame.dispose = YYImageDisposeNone;
+                frame.yyDispose = YYImageDisposeNone;
             } break;
         }
         switch (fi->frame_control.blend_op) {
@@ -1913,9 +1913,9 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         
         if (frame.blend == YYImageBlendNone && frame.isFullSize) {
             frame.blendFromIndex  = i;
-            if (frame.dispose != YYImageDisposePrevious) lastBlendIndex = i;
+            if (frame.yyDispose != YYImageDisposePrevious) lastBlendIndex = i;
         } else {
-            if (frame.dispose == YYImageDisposeBackground && frame.isFullSize) {
+            if (frame.yyDispose == YYImageDisposeBackground && frame.isFullSize) {
                 frame.blendFromIndex = lastBlendIndex;
                 lastBlendIndex = i + 1;
             } else {
@@ -2205,9 +2205,9 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
 }
 
 - (void)_blendImageWithFrame:(_YYImageDecoderFrame *)frame {
-    if (frame.dispose == YYImageDisposePrevious) {
+    if (frame.yyDispose == YYImageDisposePrevious) {
         // nothing
-    } else if (frame.dispose == YYImageDisposeBackground) {
+    } else if (frame.yyDispose == YYImageDisposeBackground) {
         CGContextClearRect(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height));
     } else { // no dispose
         if (frame.blend == YYImageBlendOver) {
@@ -2229,7 +2229,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
 
 - (CGImageRef)_newBlendedImageWithFrame:(_YYImageDecoderFrame *)frame CF_RETURNS_RETAINED{
     CGImageRef imageRef = NULL;
-    if (frame.dispose == YYImageDisposePrevious) {
+    if (frame.yyDispose == YYImageDisposePrevious) {
         if (frame.blend == YYImageBlendOver) {
             CGImageRef previousImage = CGBitmapContextCreateImage(_blendCanvas);
             CGImageRef unblendImage = [self _newUnblendedImageAtIndex:frame.index extendToCanvas:NO decoded:NULL];
@@ -2258,7 +2258,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
                 CFRelease(previousImage);
             }
         }
-    } else if (frame.dispose == YYImageDisposeBackground) {
+    } else if (frame.yyDispose == YYImageDisposeBackground) {
         if (frame.blend == YYImageBlendOver) {
             CGImageRef unblendImage = [self _newUnblendedImageAtIndex:frame.index extendToCanvas:NO decoded:NULL];
             if (unblendImage) {

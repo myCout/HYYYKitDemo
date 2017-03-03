@@ -78,14 +78,15 @@
 
 
 - (void)netWorkTestClick{
+    WS(weakSelf)
     [[HYNetworkManager sharedInstance] httpGetRequest:@"stories/latest" params:nil onCompletionBlock:^(NSString *error, NSDictionary *resposeData) {
         if (!error) {
             for (NSDictionary *dataDic in resposeData[@"stories"]) {
                 HYStoryModel *model = [HYStoryModel modelWithJSON:dataDic];
-                [_hCurrDataSource addObject:model];
+                [weakSelf.hCurrDataSource addObject:model];
             }
             
-            [_hTestTb reloadData];
+            [weakSelf.hTestTb reloadData];
         }else{
             NSLog(@"error = %@",error);
         }

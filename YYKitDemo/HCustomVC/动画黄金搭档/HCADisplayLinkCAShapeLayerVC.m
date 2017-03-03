@@ -22,9 +22,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self initTest];
-    [self TestCABasicAnimation];
+//    [self TestCABasicAnimation];
+//    
+//    WS(weakSelf)
+//    void (^emptyBlock)() = ^(){
+//        NSLog(@"weakSelf %@",weakSelf);
+//         __strong __typeof(weakSelf)strongSelf = weakSelf;
+//        NSLog(@"strongSelf %@",strongSelf);
+//    };
+//    [GCDQueue executeInMainQueue:^{
+//        emptyBlock();
+//    } afterDelaySecs:3];
 }
-
+- (void)dealloc{
+    NSLog(@"dealloc");
+}
 /**
  *示例代码是通过UIBezierPath和CAShapeLayer来创建一个简单的火柴人。
  *用UIBezierPath来创建任何你想要的路径，使用CAShapeLayer的属性path配合UIBezierPath创建的路径，就可以呈现出我们想要的形状。

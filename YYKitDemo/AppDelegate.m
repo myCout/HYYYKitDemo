@@ -18,6 +18,7 @@
 #import "JPEngine.h"
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
+#import "PLeakSniffer.h"
 #endif
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -58,6 +59,9 @@ void UncaughtExceptionHandler(NSException *exception) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initJSPatch];
     [self replyPushNotificationAuthorization:application];
+#if DEBUG
+    [[PLeakSniffer sharedInstance] installLeakSniffer];
+#endif
     // 设置主窗口,并设置根控制器
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;

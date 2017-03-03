@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
 @property (nonatomic) NSUInteger offsetX;  ///< Frame origin.x in canvas (left-bottom based)
 @property (nonatomic) NSUInteger offsetY;  ///< Frame origin.y in canvas (left-bottom based)
 @property (nonatomic) NSTimeInterval duration;          ///< Frame duration in seconds
-@property (nonatomic) YYImageDisposeMethod dispose;     ///< Frame dispose method.
+@property (nonatomic) YYImageDisposeMethod yyDispose;     ///< Frame dispose method.
 @property (nonatomic) YYImageBlendOperation blend;      ///< Frame blend operation.
 @property (nullable, nonatomic, strong) UIImage *image; ///< The image.
 + (instancetype)frameWithImage:(UIImage *)image;

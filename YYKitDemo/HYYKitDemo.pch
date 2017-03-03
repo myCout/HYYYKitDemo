@@ -34,5 +34,5 @@
 #import "SDAutoLayout.h"
 #import "FBKVOController.h"
 #import "NSObject+FBKVOController.h"
-
+#import "ReactiveCocoa.h"
 #endif /* HYYKitDemo_pch */

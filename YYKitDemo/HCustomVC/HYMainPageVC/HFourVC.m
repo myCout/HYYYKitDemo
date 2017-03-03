@@ -11,6 +11,8 @@
 
 @interface HFourVC ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic, retain) UIView *hMoveView;
+
 @property (nonatomic, retain) UIImageView *folderImageView;
 
 /** 动画元素 */
@@ -61,7 +63,18 @@
 
     [self.view addSubview:label];
     [label sizeToFit];
-//    [self.view addSubview:self.tableView];
+    
+    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 200, 20)];
+    lab.numberOfLines = 0;
+    lab.backgroundColor = [UIColor randomColor];
+    lab.text = @"IOS发新版后每天会生成自然好评。最明显的是美国区人工好评是60条，";
+    [self.view addSubview:lab];
+    [lab jk_resizeLabelVertical];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    view.backgroundColor = [UIColor randomColor];
+    self.hMoveView = view;
+//    [self.view addSubview:view];
     
 }
 
@@ -73,7 +86,9 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+    [self.view jk_addSubviewWithFadeAnimation:self.hMoveView];
+    [self.hMoveView jk_moveTo:CGPointMake(200, 200) duration:5 option:UIViewAnimationOptionCurveEaseOut];
+    [self.hMoveView jk_changeAlpha:0.2 secs:5];
     // 先将文件夹那个视图进行截图
     UIImage *animationImage = [self.folderImageView snapshotImage];
     // 再将文件夹视图的坐标系迁移到窗口坐标系（绝对坐标系）

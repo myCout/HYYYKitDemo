@@ -16,9 +16,9 @@
 //    NSLog(@"parentViewController%@",self.parentViewController.class);
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    [self.view endEditing:YES];
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [super touchesBegan:touches withEvent:event];
+//    [self.view endEditing:YES];
+//}
 
 @end

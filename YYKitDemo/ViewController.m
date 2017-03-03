@@ -27,6 +27,9 @@
 #import "HBulletVC.h"
 #import "KVOController.h"
 #import "HUIBezierPathController.h"
+#import "HChainProgrammingVC.h"
+#import "HReactiveCocoaVC.h"
+#import "HSidePullMenuVC.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -52,6 +55,9 @@
     [_hDataSourceArray addObject:@"弹幕"];//8HBulletVC
     [_hDataSourceArray addObject:@"FBKVO"];//9
     [_hDataSourceArray addObject:@"UIBezierPath详解"];//10
+    [_hDataSourceArray addObject:@"链式编程入门"];//11
+    [_hDataSourceArray addObject:@"ReactiveCocoa"];//12
+    [_hDataSourceArray addObject:@"侧拉菜单"];//13
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     
 
@@ -136,7 +142,7 @@
     switch (row) {
         case 0:
         {
-            baseVC = [HYFirstVC new];
+            baseVC = (HYBaseViewController *)[HYFirstVC new];
             
         }
             break;
@@ -190,6 +196,21 @@
         case 10:
         {
             baseVC = [HUIBezierPathController new];
+        }
+            break;
+        case 11:
+        {
+            baseVC = [HChainProgrammingVC new];
+        }
+            break;
+        case 12:
+        {
+            baseVC = [HReactiveCocoaVC new];
+        }
+            break;
+        case 13:
+        {
+            baseVC = [HSidePullMenuVC new];
         }
             break;
             
