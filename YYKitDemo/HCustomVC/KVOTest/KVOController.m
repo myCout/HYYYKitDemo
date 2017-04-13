@@ -51,7 +51,7 @@
     .heightIs(150);
     
     _model = [HYStoryModel new];
-    _model.title = @"1111";
+    _model.title = @"111122";
 
     [_hBtn jk_addActionHandler:^(NSInteger tag) {
 //        _hLb.text = @"NSLocalizedDescription=remote notifications are not supported in the simulator";
@@ -72,10 +72,21 @@
     
     FBKVOController *KVOController = [FBKVOController controllerWithObserver:self];
     self.KVOController = KVOController;
-    
+//    1 NSKeyValueObservingOptionNew 传递变化之后的值；
+//    2 NSKeyValueObservingOptionOld 传递变化之前的值；
+//    3 NSKeyValueObservingOptionInitial 观察者会在程序初始时，也就是观察变化之前，优化执行一次 观察动作；即上述执行上面 block操作一次；并且传递 默认的值，和以后传递 变化后的值；
+//    4 NSKeyValueObservingOptionPrior 会调用两次观察者操作，值改变之前，值改变之后；
+//    
+//    然后不太明白的可能是 change[NSKeyValueChangeNewKey]这里
+//    change[NSKeyValueChangeNewKey] 新值；
+//    change[NSKeyValueChangeOldKey] 旧值；
     [self.KVOController observe:_model keyPath:@"title" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
-        NSLog(@"change = %@",change[NSKeyValueChangeNewKey])
+        NSLog(@"change = %@",change[NSKeyValueChangeNewKey]);
+        _hLb.text = change[NSKeyValueChangeNewKey];
     }];
+    
+    
+    
 }
 
 #pragma mark - UITableView Datasource

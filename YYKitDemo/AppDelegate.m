@@ -57,6 +57,7 @@ void UncaughtExceptionHandler(NSException *exception) {
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [VKDevTool enableDebugMode];
     [self initJSPatch];
     [self replyPushNotificationAuthorization:application];
 #if DEBUG

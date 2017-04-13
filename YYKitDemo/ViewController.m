@@ -30,6 +30,7 @@
 #import "HChainProgrammingVC.h"
 #import "HReactiveCocoaVC.h"
 #import "HSidePullMenuVC.h"
+#import "HIMKeyboardVC.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, retain) UITableView *hTestTb;
 @property (nonatomic, retain) NSMutableArray *hDataSourceArray;
@@ -58,6 +59,7 @@
     [_hDataSourceArray addObject:@"链式编程入门"];//11
     [_hDataSourceArray addObject:@"ReactiveCocoa"];//12
     [_hDataSourceArray addObject:@"侧拉菜单"];//13
+    [_hDataSourceArray addObject:@"聊天键盘"];//14
     [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%lu", (unsigned long)_hDataSourceArray.count]];
     
 
@@ -213,7 +215,11 @@
             baseVC = [HSidePullMenuVC new];
         }
             break;
-            
+        case 14:
+        {
+            baseVC = [HIMKeyboardVC new];
+        }
+            break;
         default:
             break;
     }

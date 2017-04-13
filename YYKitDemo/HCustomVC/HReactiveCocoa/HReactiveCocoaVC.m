@@ -42,18 +42,324 @@
 //    RACDisposable:用于取消订阅或者清理资源，当信号发送完成或者发送错误的时候，就会自动触发它。
 //    RACSubject:RACSubject:信号提供者，自己可以充当信号，又能发送信号。
 //    RACReplaySubject:重复提供信号类，RACSubject的子类。RACReplaySubject可以先发送信号，在订阅信号，RACSubject就不可以。
+    [self racSenderMessage];
     
-    [self ReactiveCocoa];
-    
-    [self racAddTap];
-    
-    [self racTextField];
-    
-    //    [self racKVO];
-    [self arrayLog];
-    
-    [self subjectDemo];
+//    [self ReactiveCocoa];
+//    
+//    [self racAddTap];
+//    
+//    [self racTextField];
+//    
+//    //    [self racKVO];
+//    [self arrayLog];
+//    
+//    [self subjectDemo];
 }
+
+/**
+ Rac Btn 用法
+ */
+- (void)racBtn{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setRac_command:[[RACCommand alloc] initWithEnabled:nil signalBlock:^RACSignal *(id input) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [GCDQueue executeInMainQueue:^{
+                //btn事件执行完之后发送完成信号
+                [subscriber sendNext:[[NSDate date] description]];
+                [subscriber sendCompleted];
+                
+            } afterDelaySecs:3];
+            
+            return [RACDisposable disposableWithBlock:^{
+                //
+            }];
+        }];
+    }]];
+    [btn setTitle:@"点击" forState:UIControlStateNormal];
+    [btn setBounds:CGRectMake(100, 100, 200, 50)];
+    btn.center = self.view.center;
+    
+    [[[btn rac_command] executionSignals] subscribeNext:^(id x) {
+        [x subscribeNext:^(id x) {
+            //接收btn执行完发送的信号
+            NSLog(@"%@",x);
+        }];
+    }];
+    [self.view addSubview:btn];
+}
+
+/**
+ 用RAC实现
+ 需求：用户名长度大于3  密码长度大于3 同时满足时button可以点击
+ */
+- (void)racLoginDemo{
+    UITextField *userTextField = [UITextField new];
+    UITextField *psdTextField = [UITextField new];
+    UIButton *logInBtn = [UIButton new];
+    //注册一个合并的信号量
+    RACSignal *enableSignal = [[RACSignal combineLatest:@[userTextField.rac_textSignal,psdTextField.rac_textSignal]] map:^id(id value) {
+        //value 是一个元祖
+        return @([value[0] length] > 0 && [value[1] length] > 6);
+    }];
+    logInBtn.rac_command = [[RACCommand alloc] initWithEnabled:enableSignal signalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
+    
+}
+
+/**
+ 将slider和textfield 绑定，滑动slider时 textfield实时显示slider的值
+
+ @param slider slider
+ @param textField textfield
+ */
+- (void)blindSlider:(UISlider *)slider textField:(UITextField *)textField{
+    RACChannelTerminal *signalSlider = [slider rac_newValueChannelWithNilValue:nil];//当slider滑动时，slider值改变返回对应的 信号
+    RACChannelTerminal *signalText = [textField rac_newTextChannel];
+    [signalText subscribe:signalText];
+    [[signalSlider map:^id(id value) {
+        return [NSString stringWithFormat:@"%.2f",[value floatValue]];
+    }] subscribe:signalText];
+}
+
+#pragma mark - 1. RAC发送消息,并且绑定到控件，最基本的使用。
+-(void)racSenderMessage {
+    UITextField * _userNameFeild = [[UITextField alloc] initWithFrame:CGRectMake(100,200, 200, 30)];
+    //延迟2.0S 发送消息
+    RACSignal *signal = [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"消息"];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"一些处理事件");
+        }];
+    }] delay:2.0];
+    //将_userNameFeild的`text`属性与映射后的信号量的值绑定到一起
+    RAC(_userNameFeild , text) = [signal map:^id(id value) {
+        if ([value isEqualToString:@"消息"]) {
+            return @"成功收到";
+        }
+        return nil;
+    }];
+    _userNameFeild.backgroundColor = [UIColor randomColor];
+    [self.view addSubview:_userNameFeild];
+}
+
+#pragma mark - 2. RAC代理，使用rac_signalForSelector这个方法来获取代理信号.下边是调用alertview的代理方法
+-(void)racProtocolMothel {
+    RACSignal *protocolSignal = [self rac_signalForSelector:@selector(alertView:clickedButtonAtIndex:) fromProtocol:@protocol(UIAlertViewDelegate)];
+    [protocolSignal subscribeNext:^(id x) {
+        
+    }];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+}
+
+#pragma mark - 3. RAC通知
+-(void)racNotification {
+    //接受通知并且处理
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"RAC_Notifaciotn" object:nil] subscribeNext:^(id x) {
+        //          NSLog(@"notify.content = %@",notify.userInfo[@"content"]);
+    }];
+    
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RAC_Notifaciotn" object:nil userInfo:@{@"content" : @"i'm a notification"}];
+}
+
+#pragma mark - 4. RAC信号拼接 concat是signal1 completed之后 signal2才能执行
+-(void)racSignalLink {
+    
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@(1)];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@(2)];
+        [subscriber sendCompleted];
+        
+        return nil;
+    }];
+    
+    RACSignal* concatSignal = [RACSignal concat:@[signal1,signal2]];
+    [concatSignal subscribeNext:^(id value) {
+        NSLog(@"RAC信号拼接------value = %@",value);
+    }];
+    //或者
+    //    [[signal1 concat:signal2] subscribeNext:^(id value) {
+    //          NSLog(@"RAC信号拼接------value = %@",value);
+    //    }];
+    
+}
+
+#pragma mark - 5. RAC信号合并
+-(void)racSignalMerge {
+    
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"AA"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"BB"];
+        [subscriber sendCompleted];
+        return  nil;
+    }];
+    //合并操作
+    RACSignal* mergeSignal = [RACSignal merge:@[signal1,signal2]];
+    [mergeSignal subscribeNext:^(id x) {
+        NSLog(@"RAC信号合并------我喜欢： %@",x);
+    }];
+    //或者
+    //    [[signal1 merge:signal2] subscribeNext:^(id x) {
+    //         NSLog(@"RAC信号合并------我喜欢： %@",x);
+    //    }];
+}
+
+#pragma mark - 6. RAC信号组合(取信号量的最后发送的对象)
+-(void)racSignalCombine {
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"SS"];
+        [subscriber sendNext:@"AA"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"BB"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    //combineLatest 将数组中的信号量发出的最后一个object 组合到一起
+    [[RACSignal combineLatest:@[signal1,signal2]] subscribeNext:^(id x) {
+        RACTupleUnpack(NSString *signal1_Str, NSString *signal2_Str) = (RACTuple *)x;
+        NSLog(@"RAC信号组合------我就是 %@ %@",signal1_Str,signal2_Str);
+    }];
+    
+    //会注意收到 组合方法后还可以跟一个Block  /** + (RACSignal *)combineLatest:(id<NSFastEnumeration>)signals reduce:(id (^)())reduceBlock */
+    /*
+     reduce这个Block可以对组合后的信号量做处理
+     */
+    //我们还可以这样使用
+    RACSignal * combineSignal =[RACSignal combineLatest:@[signal1,signal2] reduce:^(NSString *signal1_Str, NSString *signal2_Str){
+        return [signal1_Str stringByAppendingString:signal2_Str];
+    }];
+    [combineSignal subscribeNext:^(id x) {
+        NSLog(@"RAC信号组合(Reduce处理)------我喜欢 %@ 的",x);
+    }];
+    
+}
+
+#pragma mark - 7. RAC信号组合(取信号量的最开始发送的对象)全部获取才会返回
+/*当且仅当signalA和signalB同时都产生了值的时候，一个value才被输出，signalA和signalB只有其中一个有值时会挂起等待另一个的值，所以输出都是一对值（RACTuple）），当signalA和signalB只要一个先completed，RACStream也解散。*/
+-(void)racSignalZIP {
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"AA"];
+        [subscriber sendNext:@"BB"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"CC"];
+        [subscriber sendCompleted];
+        
+        return nil;
+    }];
+    
+    [[RACSignal zip:@[signal1,signal2]] subscribeNext:^(id x) {
+        RACTupleUnpack(NSString *signal1_Str, NSString *signal2_Str) = (RACTuple *)x;
+        NSLog(@"RAC信号压缩------我是 %@的 %@的 ",signal1_Str, signal2_Str);
+    }];
+}
+
+#pragma mark - 8. RAC信号过滤
+-(void)racSignalFilter {
+    [[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@(19)];
+        [subscriber sendNext:@(12)];
+        [subscriber sendNext:@(20)];
+        [subscriber sendCompleted];
+        
+        return nil;
+    }] filter:^BOOL(id value) {
+        NSNumber *numberValue = value;
+        if(numberValue.integerValue < 18) {
+            //18禁
+            NSLog(@"RAC信号过滤------FBI Warning~");
+        }
+        return numberValue.integerValue > 18;
+    }] subscribeNext:^(id x) {
+        NSLog(@"RAC信号过滤------年龄：%@",x);
+    }];
+}
+
+#pragma mark - 9. RAC信号传递（传递数值，前后信号有联系）
+-(void)racSignalPass {
+    [[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:@"老板向我扔过来一个Star"];
+        return nil;
+    }] flattenMap:^RACStream *(id value) {
+        NSLog(@"RAC信号传递flattenMap1------%@",value);
+        RACSignal *tmpSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [subscriber sendNext:[NSString stringWithFormat:@"%@----我向老板扔回一块板砖",value]];
+            return nil;
+        }];
+        
+        return tmpSignal;
+    }] flattenMap:^RACStream *(id value) {
+        NSLog(@"RAC信号传递flattenMap2------%@",value);
+        
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [subscriber sendNext:[NSString stringWithFormat:@"%@---我跟老板正面刚~,结果可想而知",value]];
+            return nil;
+        }];
+    }] subscribeNext:^(id x) {
+        NSLog(@"RAC信号传递last------%@",x);
+    }];
+}
+
+#pragma mark - 10. RAC信号传递（不传递数值）
+-(void)racSignalQueue {
+    //与信号传递类似，不过使用 `then` 表明的是秩序，没有传递value
+    [[[[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSLog(@"RAC信号串------我先来");
+        [subscriber sendCompleted];
+        return nil;
+    }] then:^RACSignal *{
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"RAC信号串------我第二");
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }] then:^RACSignal *{
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"RAC信号串------我第三");
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }] subscribeNext:^(id x) {
+        NSLog(@"RAC信号串------Over");
+    }];
+    
+}
+#pragma mark - 11. RAC_Command介绍
+-(void)racCommandDemo {
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"racCommandDemo------");
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }];
+    //命令执行
+    [command execute:nil];
+    
+    
+}
+
 #pragma mark - ReactiveCocoa开发中常见用法。
 - (void)ReactiveCocoa{
 //    代替代理:
@@ -460,7 +766,7 @@
 
 #pragma mark - RAC Notification RAC中的通知不需要remove observer，因为在rac_add方法中他已经写了remove
 
-- (void)racNotification{
+- (void)hyRacNotification{
     NSMutableArray *dataArray = [[NSMutableArray alloc] initWithObjects:@"1", @"2", @"3", nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"postData" object:dataArray];
     //监听
